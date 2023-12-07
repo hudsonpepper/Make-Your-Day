@@ -82,7 +82,7 @@ li button {
 }
 
 
-#todo-list li:hover {
+ul li:hover {
   cursor: grab;
 }
 /* 

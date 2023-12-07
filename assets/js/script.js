@@ -8,10 +8,10 @@ var todoForm = document.querySelector("#todo-form");
 var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
 
-var currWkDay = dayjs().format(ddd);
-var currDay = dayjs().format(MM/D);
-var currMonth = dayjs().format(MM);
-var curYear = dayjs().format(YYYY);
+var currWkDay = dayjs().format("ddd");
+var currDay = dayjs().format("MM / D");
+var currMonth = dayjs().format("MM");
+var curYear = dayjs().format("YYYY");
 var day = $(".day");
 
 
@@ -25,40 +25,40 @@ $("#currentDay").html(currentDate);
 $("#currentTime").html(currentTime);
 
 const settings = {
-	async: true,
-	crossDomain: true,
-	url: 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13',
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '',
-		'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-	}
+  async: true,
+  crossDomain: true,
+  url: 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13',
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '',
+    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+  }
 };
 
 $.ajax(settings).done(function (response) {
-	console.log(response);
+  console.log(response);
 });
 
 // Search Weather function pulling weather data from open weather 
-function searchWeather () {
+function searchWeather() {
   fetch(settings)
-      .then ((response) => {
+    .then((response) => {
       return response.json();
-      })
-// Display Current weather 
-      .then((data) => {
-          lat = data.coord.lat;
-          lon = data.coord.lon;
-          temp = data.main.temp;
-          wind = data.wind.speed;
-          humidity = data.main.humidity;
-          currentCity.textContent = `City: ${cityName}`;
-          currentTemp.textContent = `Temp: ${temp} °F`;
-          currentWind.textContent = `Wind: ${wind} mph`;
-          currentHumidity.textContent = `Humidity: ${humidity}%`;
-      });
-    searchWeather ();
-    };
+    })
+    // Display Current weather 
+    .then((data) => {
+      lat = data.coord.lat;
+      lon = data.coord.lon;
+      temp = data.main.temp;
+      wind = data.wind.speed;
+      humidity = data.main.humidity;
+      currentCity.textContent = `City: ${cityName}`;
+      currentTemp.textContent = `Temp: ${temp} °F`;
+      currentWind.textContent = `Wind: ${wind} mph`;
+      currentHumidity.textContent = `Humidity: ${humidity}%`;
+    });
+  searchWeather();
+};
 // The following function renders items in a todo list as <li> elements
 function renderTodos() {
   // Clear todoList element and update todoCountSpan
@@ -106,7 +106,7 @@ function storeTodos() {
 }
 
 // Add submit event to form
-todoForm.addEventListener("submit", function(event) {
+todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   var todoText = todoInput.value.trim();
@@ -126,7 +126,7 @@ todoForm.addEventListener("submit", function(event) {
 });
 
 // Add click event to todoList element
-todoList.addEventListener("click", function(event) {
+todoList.addEventListener("click", function (event) {
   var element = event.target;
 
   // Checks if element is a button
@@ -145,14 +145,14 @@ todoList.addEventListener("click", function(event) {
 init()
 
 // Makes Lis sortable (src = https://jqueryui.com/sortable/)
-$( function() {
-  $( "#todo-list, #must-do, #should-do, #could-do" ).sortable({
+$(function () {
+  $("#todo-list, #must-do, #should-do, #could-do").sortable({
     connectWith: ".connectedSortable"
   }).disableSelection();
-} );
+});
 
 // To Do update the date for each day
-day.each(function() {
+day.each(function () {
   if ($(this).attr("id") == currWkDay) {
     $(this).text("Today");
   }
