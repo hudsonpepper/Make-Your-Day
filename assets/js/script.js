@@ -92,5 +92,11 @@ init()
 
 // Makes Lis sortable (src = https://jqueryui.com/sortable/)
 $( function() {
-  $( "#todo-list" ).sortable();
+  $( "#todo-list, #must-do, #should-do, #could-do" ).sortable({
+    connectWith: ".connectedSortable"
+  });
 } );
+
+sortable({
+  connectWith: ".connectedSortable"
+}).disableSelection();
