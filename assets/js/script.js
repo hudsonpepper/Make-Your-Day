@@ -1,14 +1,64 @@
+const currentCity = document.querySelector("#current-city")
+const currentTemp = document.querySelector("#current-temp");
+const currentWind = document.querySelector("#current-wind");
+const currentHumidity = document.querySelector("#current-humidity");
+
 var todoInput = document.querySelector("#todo-text");
 var todoForm = document.querySelector("#todo-form");
 var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
+
 var currWkDay = dayjs().format(ddd);
 var currDay = dayjs().format(MM/D);
 var currMonth = dayjs().format(MM);
 var curYear = dayjs().format(YYYY);
 var day = $(".day");
+
+
 var todos = [];
 
+var currentDate = dayjs().format('dddd, MMMM D, YYYY');
+var currentTime = dayjs().format('hh:mm:ss a');
+
+// display current date and time 
+$("#currentDay").html(currentDate);
+$("#currentTime").html(currentTime);
+
+const settings = {
+	async: true,
+	crossDomain: true,
+	url: 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13',
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '',
+		'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+// Search Weather function pulling weather data from open weather 
+function searchWeather () {
+  fetch(settings)
+      .then ((response) => {
+      return response.json();
+      })
+// Display Current weather 
+      .then((data) => {
+          lat = data.coord.lat;
+          lon = data.coord.lon;
+          temp = data.main.temp;
+          wind = data.wind.speed;
+          humidity = data.main.humidity;
+          currentCity.textContent = `City: ${cityName}`;
+          currentTemp.textContent = `Temp: ${temp} °F`;
+          currentWind.textContent = `Wind: ${wind} mph`;
+          currentHumidity.textContent = `Humidity: ${humidity}%`;
+      });
+    searchWeather ();
+    };
 // The following function renders items in a todo list as <li> elements
 function renderTodos() {
   // Clear todoList element and update todoCountSpan
@@ -96,7 +146,9 @@ init()
 
 // Makes Lis sortable (src = https://jqueryui.com/sortable/)
 $( function() {
-  $( "#todo-list" ).sortable();
+  $( "#todo-list, #must-do, #should-do, #could-do" ).sortable({
+    connectWith: ".connectedSortable"
+  }).disableSelection();
 } );
 
 // To Do update the date for each day
@@ -108,3 +160,4 @@ day.each(function() {
 
 
 //To Do- refresh the calendar days for this week
+
