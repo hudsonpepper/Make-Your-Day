@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Expanded Workday</title>
-        <link rel="stylesheet" type="text/css" href=".css/style.css" />
-    </head>
-    <body>
-        <script type="text/javascript" src = "./script.js"></script>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Expanded Workday</title>
+    <!-- Bootstrap Alternative: Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+</head>
+<!-- Taken From 4-26 (local storage todos) -->
+<body>
+    <div class="card">
+        <h1>Todo Tracker</h1>
+        <form id="todo-form" method="POST">
+            <label for="todo-text">Add a Todo: </label>
+            <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
+        </form>
+        <p>Todo Count: <span id="todo-count">0</span></p>
+        <ul id="todo-list"></ul>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+
 </html>
