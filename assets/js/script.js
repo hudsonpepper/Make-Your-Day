@@ -1,11 +1,18 @@
-var todoInput = document.querySelector("#todo-text");
-var todoForm = document.querySelector("#todo-form");
-var todoList = document.querySelector("#todo-list");
-var todoCountSpan = document.querySelector("#todo-count");
 const currentCity = document.querySelector("#current-city")
 const currentTemp = document.querySelector("#current-temp");
 const currentWind = document.querySelector("#current-wind");
 const currentHumidity = document.querySelector("#current-humidity");
+
+var todoInput = document.querySelector("#todo-text");
+var todoForm = document.querySelector("#todo-form");
+var todoList = document.querySelector("#todo-list");
+var todoCountSpan = document.querySelector("#todo-count");
+
+var currWkDay = dayjs().format(ddd);
+var currDay = dayjs().format(MM/D);
+var currMonth = dayjs().format(MM);
+var curYear = dayjs().format(YYYY);
+var day = $(".day");
 
 
 var todos = [];
@@ -141,9 +148,16 @@ init()
 $( function() {
   $( "#todo-list, #must-do, #should-do, #could-do" ).sortable({
     connectWith: ".connectedSortable"
-  });
+  }).disableSelection();
 } );
 
-sortable({
-  connectWith: ".connectedSortable"
-}).disableSelection();
+// To Do update the date for each day
+day.each(function() {
+  if ($(this).attr("id") == currWkDay) {
+    $(this).text("Today");
+  }
+})
+
+
+//To Do- refresh the calendar days for this week
+
