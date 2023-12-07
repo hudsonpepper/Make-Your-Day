@@ -7,13 +7,25 @@
     <!-- Bootstrap Alternative: Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- jQuery UI -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 <!-- Taken From 4-26 (local storage todos) -->
 
 <body>
-    <div class="card">more dummy text</div>
+    <div class="card">Rise and Shine</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+      <p id="currentTime" class="lead"></p>
+      <div class="weather-box">
+        <div class="weather-spotlight">
+            <div class="current-weather">
+                <p id="current-city"></p>
+                <p id="current-temp"></p>
+                <p id="current-wind"></p>
+                <p id="current-humidity"></p>
+            </div>
+        </div>
+    </div>
     <div class="cardOne">
         <div class="card">
             <h1>Todo Tracker</h1>
@@ -30,6 +42,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- jQuery UI -->
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 
