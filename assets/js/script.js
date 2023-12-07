@@ -8,10 +8,10 @@ var todoForm = document.querySelector("#todo-form");
 var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
 
-var currWkDay = dayjs().format(ddd);
-var currDay = dayjs().format(MM/D);
-var currMonth = dayjs().format(MM);
-var curYear = dayjs().format(YYYY);
+var currWkDay = dayjs().format("ddd");
+var currDay = dayjs().format("MM/D");
+var currMonth = dayjs().format("MM");
+var curYear = dayjs().format("YYYY");
 var day = $(".day");
 
 
