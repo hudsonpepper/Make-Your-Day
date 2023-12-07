@@ -65,11 +65,11 @@ li button {
   font-size: 1em;
 }
 
-.cardOne {
+.customCardOne {
   display:flex
 }
 
-.card {
+.customCard {
   /* display: flex; */
   background-color:	#FFFFE0;
   border: 1px solid #eceff1;
@@ -78,7 +78,7 @@ li button {
     rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
   margin: 60px auto;
   padding: 20px;
-  width: 80vw;
+  width: 80%;
 }
 
 

@@ -13,7 +13,7 @@
 <!-- Taken From 4-26 (local storage todos) -->
 
 <body>
-    <div class="card">Rise and Shine</h1>
+    <div class="customCard">Rise and Shine</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
       <p id="currentTime" class="lead"></p>
@@ -27,8 +27,8 @@
             </div>
         </div>
     </div>
-    <div class="cardOne">
-        <div class="card">
+    <div class="customCardOne">
+        <div class="customCard">
             <h1>Todo Tracker</h1>
             <form id="todo-form" method="POST">
                 <label for="todo-text">Add a Todo: </label>
@@ -38,19 +38,32 @@
             <h2>Unsorted</h2>
             <ul id="todo-list" class="connectedSortable">
             </ul>
+            <h2>Must Do: </h2>
             <ul id="must-do" class="connectedSortable">
-                <li> Must Do: </li>
+                <li class="ui-state-default">Item 1</li>
+                <li class="ui-state-default">Item 2</li>
+                <li class="ui-state-default">Item 3</li>
+                <li class="ui-state-default">Item 4</li>
+                <li class="ui-state-default">Item 5</li>
             </ul>
             <h2>Should Do: </h2>
             <ul id="should-do" class="connectedSortable">
-
+                <li class="ui-state-default">Item 1</li>
+                <li class="ui-state-default">Item 2</li>
+                <li class="ui-state-default">Item 3</li>
+                <li class="ui-state-default">Item 4</li>
+                <li class="ui-state-default">Item 5</li>
             </ul>
             <h2>Could Do: </h2>
             <ul id="could-do" class="connectedSortable">
-
+                <li class="ui-state-default">Item 1</li>
+                <li class="ui-state-default">Item 2</li>
+                <li class="ui-state-default">Item 3</li>
+                <li class="ui-state-default">Item 4</li>
+                <li class="ui-state-default">Item 5</li>
             </ul>
         </div>
-        <div class="card" id="calendarBox">
+        <div class="customCard" id="calendarBox">
             <div class="calendar">
                 <div class="dayView">
                     <div class="day" id="Sun">
