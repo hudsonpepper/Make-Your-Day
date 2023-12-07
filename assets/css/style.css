@@ -65,8 +65,12 @@ li button {
   font-size: 1em;
 }
 
+.cardOne {
+  display:flex
+}
+
 .card {
-  display: block;
+  /* display: flex; */
   background-color:	#FFFFE0;
   border: 1px solid #eceff1;
   border-radius: 8px;
