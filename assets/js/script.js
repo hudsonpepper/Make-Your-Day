@@ -2,7 +2,11 @@ var todoInput = document.querySelector("#todo-text");
 var todoForm = document.querySelector("#todo-form");
 var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
-
+var currWkDay = dayjs().format(ddd);
+var currDay = dayjs().format(MM/D);
+var currMonth = dayjs().format(MM);
+var curYear = dayjs().format(YYYY);
+var day = $(".day");
 var todos = [];
 
 // The following function renders items in a todo list as <li> elements
@@ -94,3 +98,13 @@ init()
 $( function() {
   $( "#todo-list" ).sortable();
 } );
+
+// To Do update the date for each day
+day.each(function() {
+  if ($(this).attr("id") == currWkDay) {
+    $(this).text("Today");
+  }
+})
+
+
+//To Do- refresh the calendar days for this week
