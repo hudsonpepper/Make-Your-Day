@@ -11,6 +11,39 @@ body {
   font-size: 20px;
 }
 
+.first-container {
+  justify-content: space-between;
+  text-align: center;
+  font-size: 40px;
+}
+
+.lead {
+  font-size: 20px;
+}
+
+.current-weather {
+  font-size: 18px;
+}
+
+#current-city{
+  font-size: 18px;
+}
+
+#current-temp{
+  font-size: 18px;
+}
+#current-wind{
+  font-size: 18px;
+}
+#current-humidity{
+  font-size: 18px;
+}
+
+.quote-box {
+  font-size: 15px;
+
+}
+
 label, p {
   font-size: 1em;
 }
@@ -28,11 +61,7 @@ h1 {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  background-color: white;
-}
+
 
 li {
   height: 2em;
@@ -44,6 +73,7 @@ li {
   font-size: 1em;
   line-height: 1.5;
 }
+
 
 li:before {
   content: "\200B";
@@ -87,6 +117,22 @@ li button {
   width: 80%;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: white !important;
+}
+
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color:  #001b44;
+  color: white;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
 
 ul li:hover {
   cursor: grab;
