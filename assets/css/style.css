@@ -10,7 +10,9 @@ body {
   color: #001b44;
   font-size: 20px;
 }
-
+.customCardOne {
+  font-size: 20px;
+}
 .first-container {
   justify-content: space-between;
   text-align: center;
@@ -132,20 +134,10 @@ li button {
 
 ul {
   list-style-type: none;
-  padding: 0;
-  background-color: white !important;
+  padding: 4px;
+  background-color: aquamarine !important;
 }
 
-li {
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  background-color:  #001b44;
-  color: white;
-  font-size: 1.5em;
-  line-height: 1.5;
-}
 
 ul li:hover {
   cursor: grab;

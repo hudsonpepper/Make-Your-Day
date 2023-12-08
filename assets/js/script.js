@@ -239,10 +239,10 @@ day.each(function() {
 // Make the day event list sortable and connected to the todo lists
 
 
-$(function() {
-  $("#Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun, .connectedSortable").sortable({
-    connectWith: ".connectedSortable, #Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun"
-  }).disableSelection();
-});
+// $(function() {
+//   $("#Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun, .connectedSortable").sortable({
+//     connectWith: ".connectedSortable, #Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun"
+//   }).disableSelection();
+// });
 
 //To Do- refresh the calendar days for this week
