@@ -203,7 +203,7 @@ $(function () {
   }).disableSelection();
 });
 
-currDay = 31;
+
 
 // To Do update the date for each day
 day.each(function() {
@@ -265,7 +265,7 @@ day.each(function() {
 
 $(function() {
   $("#Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun, .connectedSortable").sortable({
-    connectWith: ".connectedSortable, #Mon, #Tues, #Wed, #Thur, #Fri, #Sat, #Sun"
+    connectWith: ".connectedSortable, #Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun"
   }).disableSelection();
 });
 
