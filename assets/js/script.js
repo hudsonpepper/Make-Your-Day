@@ -27,7 +27,6 @@ for (var i = 0; i < daysArray.length; i++) {
 
 
 
-
 var todos = [];
 
 var currentDate = dayjs().format('dddd, MMMM D, YYYY');
@@ -37,41 +36,62 @@ var currentTime = dayjs().format('hh:mm:ss a');
 $("#currentDay").html(currentDate);
 $("#currentTime").html(currentTime);
 
-const settings = {
-	async: true,
-	crossDomain: true,
-	url: 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13',
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '',
-		'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-	}
+let latitude;
+let longitude;
+
+
+async function getGeo() {
+
+
+  let geo = await new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject)})
+
+    return {
+      latitude: geo.coords.latitude,
+      longitude: geo.coords.longitude
+    }
+  }
+// Search Weather function pulling weather data from weather API 
+async function searchWeather() {
+  let geo = await getGeo()
+  console.log(geo);
+  var requestUrl = `https://weatherapi-com.p.rapidapi.com/current.json?q=${geo.latitude},${geo.longitude}`;
+
+  fetch(requestUrl, {
+    headers: {
+      'X-RapidAPI-Key': 'cbfc516474mshe8f9ce0a07a3f7fp12f71fjsnbb5e4699df4f',
+      'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+    }
+  })
+    .then((response) => {
+      return response.json();
+    })
+
+    // Display Current weather 
+    .then((data) => {
+      console.log(data);
+      currentCity.textContent = `City: ${data.location.name}`;
+      currentTemp.textContent = `Temp: ${data.current.temp_f} °F`;
+      currentWind.textContent = `Wind: ${data.current.wind_mph} mph`;
+      currentHumidity.textContent = `Humidity: ${data.current.humidity}%`;
+    });
 };
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
 
-// Search Weather function pulling weather data from open weather 
-function searchWeather () {
-  fetch(settings)
-      .then ((response) => {
-      return response.json();
-      })
-// Display Current weather 
-      .then((data) => {
-          lat = data.coord.lat;
-          lon = data.coord.lon;
-          temp = data.main.temp;
-          wind = data.wind.speed;
-          humidity = data.main.humidity;
-          currentCity.textContent = `City: ${cityName}`;
-          currentTemp.textContent = `Temp: ${temp} °F`;
-          currentWind.textContent = `Wind: ${wind} mph`;
-          currentHumidity.textContent = `Humidity: ${humidity}%`;
-      });
-    searchWeather ();
-    };
+searchWeather();
+
+function getQuote () {
+  var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+ $.getJSON(url, function(data) {
+   $("#quote").html('"' + data.quoteText + '"');
+   $("#author").html('-' + data.quoteAuthor);
+ });
+}
+$(document).ready(function() {
+  getQuote();
+}
+)
+
 // The following function renders items in a todo list as <li> elements
 function renderTodos() {
   // Clear todoList element and update todoCountSpan
@@ -119,7 +139,7 @@ function storeTodos() {
 }
 
 // Add submit event to form
-todoForm.addEventListener("submit", function(event) {
+todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   var todoText = todoInput.value.trim();
@@ -139,7 +159,7 @@ todoForm.addEventListener("submit", function(event) {
 });
 
 // Add click event to todoList element
-todoList.addEventListener("click", function(event) {
+todoList.addEventListener("click", function (event) {
   var element = event.target;
 
   // Checks if element is a button
@@ -158,11 +178,11 @@ todoList.addEventListener("click", function(event) {
 init()
 
 // Makes Lis sortable (src = https://jqueryui.com/sortable/)
-$( function() {
-  $( "#todo-list, #must-do, #should-do, #could-do" ).sortable({
+$(function () {
+  $("#todo-list, #must-do, #should-do, #could-do").sortable({
     connectWith: ".connectedSortable"
   }).disableSelection();
-} );
+});
 
 
 //currDay = 3;

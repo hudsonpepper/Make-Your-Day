@@ -10,6 +10,39 @@ body {
   color: #001b44;
 }
 
+.first-container {
+  justify-content: space-between;
+  text-align: center;
+  font-size: 40px;
+}
+
+.lead {
+  font-size: 20px;
+}
+
+.current-weather {
+  font-size: 18px;
+}
+
+#current-city{
+  font-size: 18px;
+}
+
+#current-temp{
+  font-size: 18px;
+}
+#current-wind{
+  font-size: 18px;
+}
+#current-humidity{
+  font-size: 18px;
+}
+
+.quote-box {
+  font-size: 15px;
+
+}
+
 label, p {
   font-size: 30px;
 }

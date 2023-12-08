@@ -13,67 +13,79 @@
 <!-- Taken From 4-26 (local storage todos) -->
 
 <body>
-    <div class="card">
-        <h1>Rise and Shine</h1>
-        <p class="lead">A simple calendar app for scheduling your work day</p>
-        <p id="currentDay" class="lead"></p>
-        <p id="currentTime" class="lead"></p>
-        <div class="weather-box">
-            <div class="weather-spotlight">
-                <div class="current-weather">
-                    <p id="current-city"></p>
-                    <p id="current-temp"></p>
-                    <p id="current-wind"></p>
-                    <p id="current-humidity"></p>
-                </div>
-            </div>
+    <div class="first-container">Rise and Shine
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+      <p id="currentTime" class="lead"></p>
+    <div class="current-weather">
+        <p id="current-city"></p>
+        <p id="current-temp"></p>
+        <p id="current-wind"></p>
+        <p id="current-humidity"></p>
+    </div>
+    <div class="quote-box">
+        <div id="quote"></div>
+        <div id="author"></div>
+    </div>
+    <div class="cardOne">
+        <div class="card">
+            <h1>Todo Tracker</h1>
+            <form id="todo-form" method="POST">
+                <label for="todo-text">Add a Todo: </label>
+                <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
+            </form>
+            <p>Todo Count: <span id="todo-count">0</span></p>
+            <h2>Unsorted</h2>
+            <ul id="todo-list" class="connectedSortable">
+            </ul>
+            <h2>Must Do: </h2>
+            <ul id="must-do" class="connectedSortable">
+                <li class="ui-state-default">Item 1</li>
+                <li class="ui-state-default">Item 2</li>
+                <li class="ui-state-default">Item 3</li>
+                <li class="ui-state-default">Item 4</li>
+                <li class="ui-state-default">Item 5</li>
+            </ul>
+            <h2>Should Do: </h2>
+            <ul id="should-do" class="connectedSortable">
+                <li class="ui-state-default">Item 1</li>
+                <li class="ui-state-default">Item 2</li>
+                <li class="ui-state-default">Item 3</li>
+                <li class="ui-state-default">Item 4</li>
+                <li class="ui-state-default">Item 5</li>
+            </ul>
+            <h2>Could Do: </h2>
+            <ul id="could-do" class="connectedSortable">
+                <li class="ui-state-default">Item 1</li>
+                <li class="ui-state-default">Item 2</li>
+                <li class="ui-state-default">Item 3</li>
+                <li class="ui-state-default">Item 4</li>
+                <li class="ui-state-default">Item 5</li>
+            </ul>
         </div>
-        <div class="cardOne">
-            <div class="card">
-                <h1>Todo Tracker</h1>
-                <form id="todo-form" method="POST">
-                    <label for="todo-text">Add a Todo: </label>
-                    <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
-                </form>
-                <p>Todo Count: <span id="todo-count">0</span></p>
-                <h2>Unsorted</h2>
-                <ul id="todo-list" class="connectedSortable">
-                </ul>
-                <h2>Must Do: </h2>
-                <ul id="must-do" class="connectedSortable">
-                    <li class="ui-state-default">Item 1</li>
-                    <li class="ui-state-default">Item 2</li>
-                    <li class="ui-state-default">Item 3</li>
-                    <li class="ui-state-default">Item 4</li>
-                    <li class="ui-state-default">Item 5</li>
-                </ul>
-                <h2>Should Do: </h2>
-                <ul id="should-do" class="connectedSortable">
-                    <li class="ui-state-default">Item 1</li>
-                    <li class="ui-state-default">Item 2</li>
-                    <li class="ui-state-default">Item 3</li>
-                    <li class="ui-state-default">Item 4</li>
-                    <li class="ui-state-default">Item 5</li>
-                </ul>
-                <h2>Could Do: </h2>
-                <ul id="could-do" class="connectedSortable">
-                    <li class="ui-state-default">Item 1</li>
-                    <li class="ui-state-default">Item 2</li>
-                    <li class="ui-state-default">Item 3</li>
-                    <li class="ui-state-default">Item 4</li>
-                    <li class="ui-state-default">Item 5</li>
-                </ul>
-            </div>
-            <div class="card" id="calendarBox">
-                <div class="calendar">
-                    <div class="weekView" id="dayContainer">
-                        <ul class="day" index="0" id="Sun">Sunday</ul>
-                        <ul class="day" index="1" id="Mon">Monday</ul>
-                        <ul class="day" index="2" id="Tues">Tuesday</ul>
-                        <ul class="day" index="3" id="Wed">Wednsday</ul>
-                        <ul class="day" index="4" id="Thur">Thursday</ul>
-                        <ul class="day" index="5" id="Fri">Friday</ul>
-                        <ul class="day" index="6" id="Sat">Saturday</ul>
+        <div class="card" id="calendarBox">
+            <div class="calendar">
+                <div class="dayView">
+                    <div class="day" id="Sun">
+                        <p>Sunday</p>
+                    </div>
+                    <div class="day" id="Mon">
+                        <p>Monday</p>
+                    </div>
+                    <div class="day" id="Tues">
+                        <p>Tuesday</p>
+                    </div>
+                    <div class="day" id="Wed">
+                        <p>Wednsday</p>
+                    </div>
+                    <div class="day" id="Thurs">
+                        <p>Thursday</p>
+                    </div>
+                    <div class="day" id="Fri">
+                        <p>Friday</p>
+                    </div>
+                    <div class="day" id="Sat">
+                        <p>Saturday</p>
                     </div>
                 </div>
             </div>
