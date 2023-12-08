@@ -64,6 +64,8 @@ async function searchWeather() {
       currentWind.textContent = `Wind: ${data.current.wind_mph} mph`;
       currentHumidity.textContent = `Humidity: ${data.current.humidity}%`;
       currentCondition.textContent = `Conditions: ${data.current.condition.text}`;
+      console.log(data.current.condition.icon)
+      weatherIcon.setAttribute("src",`https:${data.current.condition.icon}`);
     });
 };
 
