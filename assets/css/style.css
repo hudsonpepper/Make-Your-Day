@@ -8,8 +8,11 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #eff5f8;
   color: #001b44;
+  font-size: 20px;
 }
-
+.customCardOne {
+  font-size: 20px;
+}
 .first-container {
   justify-content: space-between;
   text-align: center;
@@ -57,15 +60,15 @@ body {
 }
 
 label, p {
-  font-size: 30px;
+  font-size: 1em;
 }
 
 input {
-  height: 50px;
+  height: 2em;
   width: 100%;
-  padding: 6px;
-  margin-top: 10px;
-  font-size: 2em;
+  padding: .2em;
+  margin-top: .4em;
+  font-size: 1em;
   border: 1px solid #001b44;
 }
 
@@ -75,6 +78,16 @@ h1 {
 
 
 
+li {
+  height: 2em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color:  #001b44;
+  color: white;
+  font-size: 1em;
+  line-height: 1.5;
+}
 
 
 li:before {
@@ -91,18 +104,23 @@ li::after {
 li button {
   float: right;
   border: none;
-  height: 40px;
+  height: 1.4em;
   cursor: pointer;
   background-color: #ff7034;
   color: white;
   font-size: 1em;
 }
 
-.cardOne {
+.customCardOne {
   display:flex
 }
 
-.card {
+.customCardOne ul {
+  background-color: aquamarine;
+  padding: 4px;
+}
+
+.customCard {
   /* display: flex; */
   background-color:	#FFFFE0;
   border: 1px solid #eceff1;
@@ -111,27 +129,17 @@ li button {
     rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
   margin: 60px auto;
   padding: 20px;
-  width: 80vw;
+  width: 80%;
 }
 
 ul {
   list-style-type: none;
-  padding: 0;
-  background-color: white !important;
+  padding: 4px;
+  background-color: aquamarine !important;
 }
 
-li {
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  background-color:  #001b44;
-  color: white;
-  font-size: 1.5em;
-  line-height: 1.5;
-}
 
-#todo-list li:hover {
+ul li:hover {
   cursor: grab;
 }
 /* 
