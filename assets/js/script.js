@@ -24,10 +24,13 @@ var currentTime = dayjs().format('hh:mm:ss a');
 $("#currentDay").html(currentDate);
 $("#currentTime").html(currentTime);
 
+let lat = 39
+let lon = -75
+
 const settings = {
   async: true,
   crossDomain: true,
-  url: 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13',
+  url: `https://weatherapi-com.p.rapidapi.com/current.json?q=${lat},${lon}`,
   method: 'GET',
   headers: {
     'X-RapidAPI-Key': '',
@@ -141,6 +144,23 @@ todoList.addEventListener("click", function (event) {
   }
 });
 
+function checkCurrentPositions() {
+  console.log("Start of Reorder")
+  console.log("Previous Postions: ", todos)
+  console.log("Li Array: ", $("li"));
+  let todoArr = [];
+  let unorderedArr = $("#todo-list")
+  let mustDoArr = $("#must-do")
+  for(let i = 0; i < $("li").length; i++){
+    console.log("Li[i]", $("li"))
+    console.log("data-index", $("li")[i].dataset.index);
+    todoArr[i] = $("li")[i].innerText.split("\n")[0];
+    console.log("TodoArr: ",todoArr);
+  }
+  return todos
+}
+
+
 // Calls init to retrieve data and render it to the page on load
 init()
 
@@ -158,6 +178,11 @@ day.each(function () {
   }
 })
 
-
+$("li").on("mouseup", function(event){
+  console.log(event);
+  console.log($(this).parent());
+  todos = setTimeout(checkCurrentPositions, 25);
+  console.log("todos", todos)
+})
 //To Do- refresh the calendar days for this week
 
