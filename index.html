@@ -14,71 +14,72 @@
 
 <body>
 
-    <div class="first-container">Rise and Shine
-      <p class="lead">A simple calendar app for scheduling your day</p>
+  <div class="first-container">Rise and Shine
+    <p class="lead">A simple calendar app for scheduling your day</p>
     <div class="day-time">
-        <p id="currentDay" class="lead"></p>
-        <p id="currentTime" class="lead"></p>
+      <p id="currentDay" class="lead"></p>
+      <p id="currentTime" class="lead"></p>
     </div>
     <div class="current-weather">
-        <div id="current-city"></div>
-        <div id="current-temp"></div>
-        <div id="current-wind"></div>
-        <div id="current-humidity"></div>
-        <div id="current-condition"></div>
+      <div id="current-city"></div>
+      <div id="current-temp"></div>
+      <div id="current-wind"></div>
+      <div id="current-humidity"></div>
+      <div id="current-condition"></div>
     </div>
     <div class="quote-box">
-        <div id="quote"></div>
-        <div id="author"></div>
+      <div id="quote"></div>
+      <div id="author"></div>
     </div>
-    <!-- Start Do To Tracker (Left Side) -->
-    <div class="customCardOne">
-      <div class="customCard">
-        <h1>Todo Tracker</h1>
-        <form id="todo-form">
-          <label for="todo-text">Add a Todo: </label>
-          <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
-        </form>
-        <p>Todo Count: <span id="todo-count">0</span></p>
-        <div id="todo-div">
-          <h2>Unsorted</h2>
-          <ul id="todo-list" class="connectedSortable">
-          </ul>
-          <h2>Must Do: </h2>
-          <ul id="must-do" class="connectedSortable">
-          </ul>
-          <h2>Should Do: </h2>
-          <ul id="should-do" class="connectedSortable">
-          </ul>
-          <h2>Could Do: </h2>
-          <ul id="could-do" class="connectedSortable">
-          </ul>
-        </div>
-
-        <div class="card" id="calendarBox">
-            <div class="calendar">
-                <div class="dayView">
-                    <ul class ="day" id ="Sun" index="0">Sunday</ul>
-                    <ul class ="day" id ="Mon" index="1">Monday</ul>
-                    <ul class ="day" id ="Tues" index="2">Tuesday</ul>
-                    <ul class ="day" id ="Wed" index="3">Wednsday</ul>
-                    <ul class ="day" id ="Thu" index="4">Thursday</ul>
-                    <ul class ="day" id ="Fri" index="5">Friday</ul>
-                    <ul class ="day" id ="Sat" index="6">Saturday</ul>
-                </div>
-            </div>
-          </div>
+  </div>
+  <!-- Start Do To Tracker (Left Side) -->
+  <div class="customCardOne">
+    <div class="customCard">
+      <h1>Todo Tracker</h1>
+      <form id="todo-form">
+        <label for="todo-text">Add a Todo: </label>
+        <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
+      </form>
+      <p>Todo Count: <span id="todo-count">0</span></p>
+      <div id="todo-div">
+        <h2>Unsorted</h2>
+        <ul id="todo-list" class="connectedSortable">
+        </ul>
+        <h2>Must Do: </h2>
+        <ul id="must-do" class="connectedSortable">
+        </ul>
+        <h2>Should Do: </h2>
+        <ul id="should-do" class="connectedSortable">
+        </ul>
+        <h2>Could Do: </h2>
+        <ul id="could-do" class="connectedSortable">
+        </ul>
+      </div>
+    </div>
+    <div class="customCard card" id="calendarBox">
+      <div class="calendar">
+        <div class="dayView">
+          <ul class="day connectedSortable" id="Sun" index="0">Sunday</ul>
+          <ul class="day connectedSortable" id="Mon" index="1">Monday</ul>
+          <ul class="day connectedSortable" id="Tues" index="2">Tuesday</ul>
+          <ul class="day connectedSortable" id="Wed" index="3">Wednsday</ul>
+          <ul class="day connectedSortable" id="Thu" index="4">Thursday</ul>
+          <ul class="day connectedSortable" id="Fri" index="5">Friday</ul>
+          <ul class="day connectedSortable" id="Sat" index="6">Saturday</ul>
         </div>
       </div>
     </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./assets/js/script.js"></script>
-    <script type="text/javascript" src="./assets/js/todoscript.js"></script>
+
+  </div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./assets/js/todoscript.js"></script>
+  <script type="text/javascript" src="./assets/js/script.js"></script>
+
 </body>
 
 </html>

@@ -22,7 +22,7 @@ function renderTodos() {
   })
   // Makes Li sortable (src = https://jqueryui.com/sortable/)
   $(function () {
-    $("#todo-list, #must-do, #should-do, #could-do").sortable({
+    $("#todo-list, #must-do, #should-do, #could-do, #Sun, #Mon, #Tues, #Wed, #Thu, #Fri, #Sat").sortable({
       connectWith: ".connectedSortable"
     }).disableSelection();
   });
@@ -92,7 +92,6 @@ todoForm.addEventListener("submit", function (event) {
   renderTodos();
 });
 
-// Add submit event to form
 
 
 // Add click event to todoList element
@@ -104,12 +103,4 @@ todoList.addEventListener("click", function (event) {
 
 });
 
-
-
-
-
-
-
-
-// Calls init to retrieve data and render it to the page on load
 init()
