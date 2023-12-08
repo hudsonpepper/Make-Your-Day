@@ -5,13 +5,11 @@ const currentTemp = document.querySelector("#current-temp");
 const currentWind = document.querySelector("#current-wind");
 const currentHumidity = document.querySelector("#current-humidity");
 
-var todoInput = document.querySelector("#todo-text");
-var todoForm = document.querySelector("#todo-form");
-var todoList = document.querySelector("#todo-list");
-var todoCountSpan = document.querySelector("#todo-count");
 
 var currWkDay = dayjs().format("ddd");
+
 var currDay = dayjs().format("D");
+
 var currMonth = dayjs().format("MM");
 var curYear = dayjs().format("YYYY");
 var day = $(".day");
@@ -27,7 +25,6 @@ for (var i = 0; i < daysArray.length; i++) {
 
 
 
-var todos = [];
 
 var currentDate = dayjs().format('dddd, MMMM D, YYYY');
 var currentTime = dayjs().format('hh:mm:ss a');
@@ -174,19 +171,10 @@ todoList.addEventListener("click", function (event) {
   }
 });
 
-// Calls init to retrieve data and render it to the page on load
-init()
-
-// Makes Lis sortable (src = https://jqueryui.com/sortable/)
-$(function () {
-  $("#todo-list, #must-do, #should-do, #could-do").sortable({
-    connectWith: ".connectedSortable"
-  }).disableSelection();
-});
-
 
 //currDay = 3;
 // To Do update the date for each day
+
 day.each(function() {
   var dateIndex = Number($(this).attr("index"));
   var indexDiff = currDayIndex - dateIndex;
@@ -213,6 +201,7 @@ day.each(function() {
 })
 //console.log(currWkDay);
 
+
 // Highlights the current day of the week
 day.each(function() {
   console.log($(this).attr("id"));
@@ -222,6 +211,7 @@ day.each(function() {
 });
 
 // Make the day event list sortable and connected to the todo lists
+
 
 $(function() {
   $("#Mon, #Tues, #Wed, #Thur, #Fri, #Sat, #Sun, .connectedSortable").sortable({

@@ -2,17 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Expanded Workday</title>
-    <!-- Bootstrap Alternative: Bulma -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!-- jQuery UI -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <meta charset="UTF-8">
+  <title>Expanded Workday</title>
+  <!-- Bootstrap Alternative: Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
 <!-- Taken From 4-26 (local storage todos) -->
 
 <body>
+
     <div class="first-container">Rise and Shine
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
@@ -27,42 +28,30 @@
         <div id="quote"></div>
         <div id="author"></div>
     </div>
-    <div class="cardOne">
-        <div class="card">
-            <h1>Todo Tracker</h1>
-            <form id="todo-form" method="POST">
-                <label for="todo-text">Add a Todo: </label>
-                <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
-            </form>
-            <p>Todo Count: <span id="todo-count">0</span></p>
-            <h2>Unsorted</h2>
-            <ul id="todo-list" class="connectedSortable">
-            </ul>
-            <h2>Must Do: </h2>
-            <ul id="must-do" class="connectedSortable">
-                <li class="ui-state-default">Item 1</li>
-                <li class="ui-state-default">Item 2</li>
-                <li class="ui-state-default">Item 3</li>
-                <li class="ui-state-default">Item 4</li>
-                <li class="ui-state-default">Item 5</li>
-            </ul>
-            <h2>Should Do: </h2>
-            <ul id="should-do" class="connectedSortable">
-                <li class="ui-state-default">Item 1</li>
-                <li class="ui-state-default">Item 2</li>
-                <li class="ui-state-default">Item 3</li>
-                <li class="ui-state-default">Item 4</li>
-                <li class="ui-state-default">Item 5</li>
-            </ul>
-            <h2>Could Do: </h2>
-            <ul id="could-do" class="connectedSortable">
-                <li class="ui-state-default">Item 1</li>
-                <li class="ui-state-default">Item 2</li>
-                <li class="ui-state-default">Item 3</li>
-                <li class="ui-state-default">Item 4</li>
-                <li class="ui-state-default">Item 5</li>
-            </ul>
+    <!-- Start Do To Tracker (Left Side) -->
+    <div class="customCardOne">
+      <div class="customCard">
+        <h1>Todo Tracker</h1>
+        <form id="todo-form">
+          <label for="todo-text">Add a Todo: </label>
+          <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
+        </form>
+        <p>Todo Count: <span id="todo-count">0</span></p>
+        <div id="todo-div">
+          <h2>Unsorted</h2>
+          <ul id="todo-list" class="connectedSortable">
+          </ul>
+          <h2>Must Do: </h2>
+          <ul id="must-do" class="connectedSortable">
+          </ul>
+          <h2>Should Do: </h2>
+          <ul id="should-do" class="connectedSortable">
+          </ul>
+          <h2>Could Do: </h2>
+          <ul id="could-do" class="connectedSortable">
+          </ul>
         </div>
+
         <div class="card" id="calendarBox">
             <div class="calendar">
                 <div class="dayView">
@@ -75,14 +64,18 @@
                     <ul class ="day" id ="Sat" index="6">Saturday</ul>
                 </div>
             </div>
+          </div>
         </div>
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <!-- jQuery UI -->
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-            integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="./assets/js/script.js"></script>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+    <script type="text/javascript" src="./assets/js/todoscript.js"></script>
 </body>
 
 </html>
