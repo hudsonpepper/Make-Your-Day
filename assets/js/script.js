@@ -191,7 +191,7 @@ day.each(function() {
   var dateIndex = Number($(this).attr("index"));
   var indexDiff = currDayIndex - dateIndex;
   var dayVal = currDay - indexDiff;
-  //console.log(dateIndex);
+  console.log(dateIndex);
   if ( dateIndex < currDayIndex) {
     //To do handle for when day is in previous month
     indexDiff = currDayIndex - dateIndex;
