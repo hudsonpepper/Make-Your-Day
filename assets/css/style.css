@@ -73,22 +73,9 @@ h1 {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  background-color: white;
-}
 
-li {
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  background-color:  #001b44;
-  color: white;
-  font-size: 1.5em;
-  line-height: 1.5;
-}
+
+
 
 li:before {
   content: "\200B";
@@ -127,6 +114,22 @@ li button {
   width: 80vw;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: white !important;
+}
+
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color:  #001b44;
+  color: white;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
 
 #todo-list li:hover {
   cursor: grab;

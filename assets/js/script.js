@@ -11,10 +11,21 @@ var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
 
 var currWkDay = dayjs().format("ddd");
-var currDay = dayjs().format("MM/D");
+var currDay = dayjs().format("D");
 var currMonth = dayjs().format("MM");
 var curYear = dayjs().format("YYYY");
 var day = $(".day");
+//Set curr day index
+var currDayIndex = 0;
+var daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+for (var i = 0; i < daysArray.length; i++) {
+  if (currWkDay === daysArray[i]) {
+    currDayIndex = i;
+  }
+}
+//console.log(currDayIndex);
+
+
 
 var todos = [];
 
@@ -174,13 +185,49 @@ $(function () {
   }).disableSelection();
 });
 
+
+//currDay = 3;
 // To Do update the date for each day
-day.each(function () {
-  if ($(this).attr("id") == currWkDay) {
-    $(this).text("Today");
+day.each(function() {
+  var dateIndex = Number($(this).attr("index"));
+  var indexDiff = currDayIndex - dateIndex;
+  var dayVal = currDay - indexDiff;
+  console.log(dateIndex);
+  if ( dateIndex < currDayIndex) {
+    //To do handle for when day is in previous month
+    indexDiff = currDayIndex - dateIndex;
+    dayVal = currDay - indexDiff;
+    $(this).text(dayVal + " " + $(this).text());
+
+  }
+  else if ( dateIndex > currDayIndex) {
+    //To Do handle what happens if day is in next month
+    indexDiff = dateIndex - currDayIndex;
+    //console.log(indexDiff);
+    dayVal = Number(currDay) + indexDiff;
+    //console.log(dayVal);
+    $(this).text(dayVal + " " + $(this).text());
+  }
+  else {
+    $(this).text(currDay + " " + $(this).text());
   }
 })
+//console.log(currWkDay);
 
+// Highlights the current day of the week
+day.each(function() {
+  console.log($(this).attr("id"));
+  if ($(this).attr("id") === currWkDay) {
+    $(this).css("color","red");
+  }
+});
+
+// Make the day event list sortable and connected to the todo lists
+
+$(function() {
+  $("#Mon, #Tues, #Wed, #Thur, #Fri, #Sat, #Sun, .connectedSortable").sortable({
+    connectWith: ".connectedSortable, #Mon, #Tues, #Wed, #Thur, #Fri, #Sat, #Sun"
+  }).disableSelection();
+});
 
 //To Do- refresh the calendar days for this week
-
