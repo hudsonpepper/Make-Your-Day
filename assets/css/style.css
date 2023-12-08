@@ -20,11 +20,24 @@ body {
   font-size: 20px;
 }
 
+.day-time {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
 .current-weather {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
   font-size: 18px;
 }
 
 #current-city{
+  font-size: 18px;
+}
+
+#current-conditions{
   font-size: 18px;
 }
 

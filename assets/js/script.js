@@ -1,7 +1,9 @@
-const currentCity = document.querySelector("#current-city")
+const currentCity = document.querySelector("#current-city");
 const currentTemp = document.querySelector("#current-temp");
 const currentWind = document.querySelector("#current-wind");
 const currentHumidity = document.querySelector("#current-humidity");
+const currentCondition = document.querySelector("#current-condition")
+const weatherIcon = document.querySelector("#icon")
 
 var todoInput = document.querySelector("#todo-text");
 var todoForm = document.querySelector("#todo-form");
@@ -61,6 +63,7 @@ async function searchWeather() {
       currentTemp.textContent = `Temp: ${data.current.temp_f} °F`;
       currentWind.textContent = `Wind: ${data.current.wind_mph} mph`;
       currentHumidity.textContent = `Humidity: ${data.current.humidity}%`;
+      currentCondition.textContent = `Conditions: ${data.current.condition.text}`;
     });
 };
 
