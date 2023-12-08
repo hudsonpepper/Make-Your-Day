@@ -22,6 +22,10 @@ for (var i = 0; i < daysArray.length; i++) {
   }
 }
 //console.log(currDayIndex);
+//Set month length
+var monthArr = [31,28,31,30,31,30,31,31,30,31,30,31];
+console.log(currMonth);
+var monthLen = monthArr[currMonth-1];
 
 
 
@@ -172,18 +176,35 @@ todoList.addEventListener("click", function (event) {
 });
 
 
-//currDay = 3;
+
 // To Do update the date for each day
 
 day.each(function() {
   var dateIndex = Number($(this).attr("index"));
   var indexDiff = currDayIndex - dateIndex;
   var dayVal = currDay - indexDiff;
-  console.log(dateIndex);
+  console.log(currMonth);
   if ( dateIndex < currDayIndex) {
     //To do handle for when day is in previous month
     indexDiff = currDayIndex - dateIndex;
     dayVal = currDay - indexDiff;
+    // Handles if the week has days in 2 months
+    if (dayVal < 1) {
+      if (currMonth === "02" || currMonth === "04" || currMonth === "06" || currMonth === "08" || currMonth === "09" || currMonth === "11" || currMonth === "01") {
+        var monthIndex = [31, 30, 29, 28, 27, 26];
+        dayVal = monthIndex[Math.abs(dayVal)];
+      }
+      else if (currMonth === "04" || currMonth === "07" || currMonth === "10" || currMonth === "12") {
+        var monthIndex = [30, 29, 28, 27, 26, 25];
+        dayVal = monthIndex[Math.abs(dayVal)];
+      }
+      //To Do handle leap years(dayVal = 29)
+      else {
+        var monthIndex = [28, 27, 26, 25, 24, 23];
+        dayVal = monthIndex[Math.abs(dayVal)];
+      }
+    }
+    
     $(this).text(dayVal + " " + $(this).text());
 
   }
@@ -193,6 +214,10 @@ day.each(function() {
     //console.log(indexDiff);
     dayVal = Number(currDay) + indexDiff;
     //console.log(dayVal);
+    if (dayVal > monthLen) {
+      dayVal = (dayVal-monthLen);
+      console.log(dayVal);
+    }
     $(this).text(dayVal + " " + $(this).text());
   }
   else {
@@ -214,8 +239,8 @@ day.each(function() {
 
 
 $(function() {
-  $("#Mon, #Tues, #Wed, #Thur, #Fri, #Sat, #Sun, .connectedSortable").sortable({
-    connectWith: ".connectedSortable, #Mon, #Tues, #Wed, #Thur, #Fri, #Sat, #Sun"
+  $("#Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun, .connectedSortable").sortable({
+    connectWith: ".connectedSortable, #Mon, #Tues, #Wed, #Thu, #Fri, #Sat, #Sun"
   }).disableSelection();
 });
 
