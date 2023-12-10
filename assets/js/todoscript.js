@@ -92,6 +92,15 @@ todoForm.addEventListener("submit", function (event) {
   li.appendChild(button);
   todoList = document.querySelector("#todo-list")
   todoList.appendChild(li)
+  console.log($(todoList).children());
+  let numLi = $(todoList).children().length;
+  $(todoList).prev().children().eq(0).text(numLi);
+  console.log("NumLI", numLi);
+  if(numLi > 0) {
+    $("Inside the conditional")
+
+    $(todoList).prev().children().eq(0).removeClass("hidden");
+  }
   // console.log(todoDiv);
   console.log(todoList)
   // console.log(li)
@@ -102,7 +111,6 @@ todoForm.addEventListener("submit", function (event) {
   // })
 
   storeTodos();
-  renderTodos();
 });
 
 

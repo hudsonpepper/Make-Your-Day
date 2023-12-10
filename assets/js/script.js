@@ -175,22 +175,38 @@ day.each(function () {
 });
 
 // Accordion 
-var acc = document.getElementsByClassName("accordion");
-var i;
+var accElArray = $(".accordion");
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
+for (let i = 0; i < accElArray.length; i++) {
+  accElArray[i].addEventListener("click", function () {
     /* Toggle between adding and removing the "active" class,
     to highlight the button that controls the panel */
     this.classList.toggle("active");
     console.log("click");
-    console.log("Number of Elements:", $(this).next().children().length)
+    let numLi = $(this).next().children().length;
+    let spanNum;
+    console.log("Number of Elements:", numLi)
+    if($(this).parent().attr("id") == "todo-div") {
+      spanNum = 0;
+    }
+    else {
+      spanNum = 1;
+    }
     /* Toggle between hiding and showing the active panel */
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
+      $(this).children().eq(spanNum).text(numLi);
+      if (numLi > 0) {
+      $(this).children().eq(spanNum).removeClass("hidden");
+      storeTodos();
+      }
     } else {
       panel.style.display = "block";
+      console.log( $(this).children().eq(1))
+      $(this).children().eq(spanNum).text(numLi);
+      $(this).children().eq(spanNum).addClass("hidden");
+      storeTodos();
     }
   });
 };
