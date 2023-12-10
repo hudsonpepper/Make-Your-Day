@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::before,
 *::after {
@@ -14,9 +18,8 @@ body {
   font-size: 20px;
 }
 .first-container {
-  justify-content: space-between;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .lead {
@@ -25,38 +28,14 @@ body {
 
 .day-time {
   display: flex;
-  justify-content: center;
-  gap: 40px;
 }
 
 .current-weather {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 18px;
-}
-
-#current-city{
-  font-size: 18px;
-}
-
-#current-conditions{
-  font-size: 18px;
-}
-
-#current-temp{
-  font-size: 18px;
-}
-#current-wind{
-  font-size: 18px;
-}
-#current-humidity{
-  font-size: 18px;
 }
 
 .quote-box {
   font-size: 15px;
-
 }
 
 label, p {
@@ -106,7 +85,7 @@ li button {
   border: none;
   height: 1.4em;
   cursor: pointer;
-  background-color: #ff7034;
+  background-color: #ca8263;
   color: white;
   font-size: 1em;
 }
@@ -116,13 +95,13 @@ li button {
 }
 
 .customCardOne ul {
-  background-color: aquamarine;
+  background-color: rgb(35, 140, 103);
   padding: 4px;
 }
 
 .customCard {
   /* display: flex; */
-  background-color:	#FFFFE0;
+  background-color:	#e7e7d2;
   border: 1px solid #eceff1;
   border-radius: 8px;
   box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
@@ -135,7 +114,7 @@ li button {
 ul {
   list-style-type: none;
   padding: 4px;
-  background-color: aquamarine !important;
+  background-color:rgb(35, 140, 103) !important;
 }
 
 
