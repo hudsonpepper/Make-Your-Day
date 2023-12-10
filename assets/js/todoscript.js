@@ -9,6 +9,7 @@ var todoCountSpan = document.querySelector("#todo-count");
 function renderTodos() {
   // Clear todoList element and update todoCountSpan
   todoDiv.innerHTML = localStorage.getItem("todos");
+  document.querySelector("#calendarBox").innerHTML = localStorage.getItem("calendar");
   $("ul").on("mouseup", "li", function (event) {
     console.log(event);
     console.log($(this).parent());
@@ -26,20 +27,28 @@ function renderTodos() {
       connectWith: ".connectedSortable"
     }).disableSelection();
   });
+  todoCount = document.querySelectorAll("li").length;
+  
+  todoCountSpan.textContent = todoCount;
 }
 
 
 // This function is being called below and will run when the page loads.
 function init() {
   // Get stored todos from localStorage
-  var storedTodos = (localStorage.getItem("todos"));
-  var todoCount = JSON.parse(localStorage.getItem("todoCount"));
+  var storedTodos = localStorage.getItem("todos");
+  var todoCount = localStorage.getItem("todoCount");
+  var storedCalendar = localStorage.getItem("calendar");
+ 
   // If todos were retrieved from localStorage, update the todos array to it
   if (storedTodos == null) {
     localStorage.setItem("todos", todoDiv.innerHTML);
   }
   if (todoCount == null) {
     localStorage.setItem("todoCount", "0");
+  }
+  if (storedCalendar == null) {
+    localStorage.setItem("calendar",  document.querySelector("#calendarBox").innerHTML);
   }
   // This is a helper function that will render todos to the DOM
   renderTodos();
@@ -50,6 +59,10 @@ function storeTodos() {
   // todoDiv = document.querySelector("#todo-div")
   console.log((todoDiv.innerHTML));
   localStorage.setItem("todos", todoDiv.innerHTML);
+  localStorage.setItem("calendar",  document.querySelector("#calendarBox").innerHTML);
+  todoCount = document.querySelectorAll("li").length;
+  todoCountSpan.textContent = todoCount;
+  console.log("Todo Count", todoCount)
 }
 
 todoForm.addEventListener("submit", function (event) {
@@ -73,7 +86,7 @@ todoForm.addEventListener("submit", function (event) {
   li.classList.add("ui-state-default");
 
   var button = document.createElement("button");
-  button.textContent = "Complete ✔️";
+  button.textContent = "✔️";
 
   //li.appendChild(spanEl);
   li.appendChild(button);
