@@ -131,7 +131,7 @@ day.each(function() {
       }
     }
     
-    $(this).text(dayVal + " " + $(this).text());
+    $(this).text(dayVal);
 
   }
   else if ( dateIndex > currDayIndex) {
@@ -144,10 +144,10 @@ day.each(function() {
       dayVal = (dayVal-monthLen);
       console.log(dayVal);
     }
-    $(this).text(dayVal + " " + $(this).text());
+    $(this).text(dayVal);
   }
   else {
-    $(this).text(currDay + " " + $(this).text());
+    $(this).text(currDay);
   }
 })
 //console.log(currWkDay);
@@ -157,7 +157,7 @@ day.each(function() {
 day.each(function() {
   console.log($(this).attr("id"));
   if ($(this).attr("id") === currWkDay) {
-    $(this).css("color","red");
+    $(this).parent().css("color","red");
   }
 });
 

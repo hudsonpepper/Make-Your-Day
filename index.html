@@ -45,16 +45,16 @@
       </form>
       <p>Todo Count: <span id="todo-count">0</span></p>
       <div id="todo-div">
-        <h2>Unsorted</h2>
+        <button>Unsorted</button>
         <ul id="todo-list" class="connectedSortable">
         </ul>
-        <h2>Must Do: </h2>
+        <button>Must Do: </button>
         <ul id="must-do" class="connectedSortable">
         </ul>
-        <h2>Should Do: </h2>
+        <button>Should Do: </button>
         <ul id="should-do" class="connectedSortable">
         </ul>
-        <h2>Could Do: </h2>
+        <button>Could Do: </button>
         <ul id="could-do" class="connectedSortable">
         </ul>
       </div>
@@ -62,13 +62,20 @@
     <div class="customCard card" id="calendarBox">
       <div class="calendar">
         <div class="dayView">
-          <ul class="day connectedSortable" id="Sun" index="0">Sunday</ul>
-          <ul class="day connectedSortable" id="Mon" index="1">Monday</ul>
-          <ul class="day connectedSortable" id="Tues" index="2">Tuesday</ul>
-          <ul class="day connectedSortable" id="Wed" index="3">Wednsday</ul>
-          <ul class="day connectedSortable" id="Thu" index="4">Thursday</ul>
-          <ul class="day connectedSortable" id="Fri" index="5">Friday</ul>
-          <ul class="day connectedSortable" id="Sat" index="6">Saturday</ul>
+          <button><span class="day" id="Sun" index="0"></span> Sunday</button>
+          <ul class="connectedSortable" id="SunUl"></ul>
+          <button><span class="day" id="Mon" index="1"></span> Monday</button>
+          <ul class="connectedSortable" id="MonUl"></ul>
+          <button><span class="day" id="Tues" index="2"></span> Tuesday</button>
+          <ul class="connectedSortable" id="TuesUl"></ul>
+          <button><span class="day" id="Wed" index="3"></span> Wednsday</button>
+          <ul class="connectedSortable" id="WedUl"></ul>
+          <button><span class="day" id="Thu" index="4"></span> Thursday</button>
+          <ul class="connectedSortable" id="ThuUl"></ul>
+          <button><span class="day" id="Fri" index="5"></span> Friday</button>
+          <ul class="connectedSortable" id="FriUl"></ul>
+          <button><span class="day" id="Sat" index="6"></span> Saturday</button>
+          <ul class="connectedSortable" id="SatUl"></ul>
         </div>
       </div>
     </div>

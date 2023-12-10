@@ -23,7 +23,7 @@ function renderTodos() {
   })
   // Makes Li sortable (src = https://jqueryui.com/sortable/)
   $(function () {
-    $("#todo-list, #must-do, #should-do, #could-do, #Sun, #Mon, #Tues, #Wed, #Thu, #Fri, #Sat").sortable({
+    $("#todo-list, #must-do, #should-do, #could-do, #SunUl, #MonUl, #TuesUl, #WedUl, #ThuUl, #FriUl, #SatUl").sortable({
       connectWith: ".connectedSortable"
     }).disableSelection();
   });
