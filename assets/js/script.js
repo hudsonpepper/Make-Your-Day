@@ -75,7 +75,7 @@ async function searchWeather() {
       currentTemp.textContent = `Temp: ${data.current.temp_f} °F`;
       currentWind.textContent = `Wind: ${data.current.wind_mph} mph`;
       currentHumidity.textContent = `Humidity: ${data.current.humidity}%`;
-      currentCondition.textContent = `Conditions: ${data.current.condition.text}`;
+      currentCondition.textContent = `${data.current.condition.text}`;
       console.log(data.current.condition.icon)
       weatherIcon.setAttribute("src",`https:${data.current.condition.icon}`);
     });
@@ -157,7 +157,7 @@ day.each(function() {
 day.each(function() {
   console.log($(this).attr("id"));
   if ($(this).attr("id") === currWkDay) {
-    $(this).parent().css("color","red");
+    $(this).parent().css("color","gold");
   }
 });
 
