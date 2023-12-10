@@ -24,7 +24,7 @@ for (var i = 0; i < daysArray.length; i++) {
 //console.log(currDayIndex);
 //Set month length
 var monthArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-console.log(currMonth);
+// console.log(currMonth);
 var monthLen = monthArr[currMonth - 1];
 
 
@@ -62,7 +62,7 @@ async function getGeo() {
 // Search Weather function pulling weather data from weather API 
 async function searchWeather() {
   let geo = await getGeo()
-  console.log(geo);
+  // console.log(geo);
   var requestUrl = `https://weatherapi-com.p.rapidapi.com/current.json?q=${geo.latitude},${geo.longitude}`;
 
   fetch(requestUrl, {
@@ -77,13 +77,13 @@ async function searchWeather() {
 
     // Display Current weather 
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       currentCity.textContent = `City: ${data.location.name}`;
       currentTemp.textContent = `Temp: ${data.current.temp_f} °F`;
       currentWind.textContent = `Wind: ${data.current.wind_mph} mph`;
       currentHumidity.textContent = `Humidity: ${data.current.humidity}%`;
       currentCondition.textContent = `${data.current.condition.text}`;
-      console.log(data.current.condition.icon)
+      // console.log(data.current.condition.icon)
       weatherIcon.setAttribute("src", `https:${data.current.condition.icon}`);
     });
 };
@@ -116,7 +116,7 @@ day.each(function () {
   var dateIndex = Number($(this).attr("index"));
   var indexDiff = currDayIndex - dateIndex;
   var dayVal = currDay - indexDiff;
-  console.log(currMonth);
+  // console.log(currMonth);
   if (dateIndex < currDayIndex) {
     //To do handle for when day is in previous month
     indexDiff = currDayIndex - dateIndex;
@@ -155,7 +155,7 @@ day.each(function () {
     //console.log(dayVal);
     if (dayVal > monthLen) {
       dayVal = (dayVal - monthLen);
-      console.log(dayVal);
+      // console.log(dayVal);
     }
     $(this).text(dayVal);
   }
@@ -168,7 +168,7 @@ day.each(function () {
 
 // Highlights the current day of the week
 day.each(function () {
-  console.log($(this).attr("id"));
+  // console.log($(this).attr("id"));
   if ($(this).attr("id") === currWkDay) {
     $(this).parent().addClass("curDay")
   }
@@ -203,7 +203,7 @@ for (let i = 0; i < accElArray.length; i++) {
       }
     } else {
       panel.style.display = "block";
-      console.log( $(this).children().eq(1))
+      // console.log( $(this).children().eq(1))
       $(this).children().eq(spanNum).text(numLi);
       $(this).children().eq(spanNum).addClass("hidden");
       storeTodos();
