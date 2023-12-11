@@ -16,27 +16,27 @@
 </head>
 <!-- Taken From 4-26 (local storage todos) -->
 
-<body class="text-gray-700 font-sans" ></body>
+<body class="text-gray-700 font-sans"></body>
 <div class="current-weather text-lg items-center justify-center gap-6">
-    <div id="current-city">Turn on location to see weather</div>
-    <div id="current-temp"></div>
-    <div id="current-condition"></div>
-    <img id="icon" src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="weather icon">
-    <div id="current-wind"></div>
-    <div id="current-humidity"></div>
+  <div id="current-city">Turn on location to see weather</div>
+  <div id="current-temp"></div>
+  <div id="current-condition"></div>
+  <img id="icon" src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="weather icon">
+  <div id="current-wind"></div>
+  <div id="current-humidity"></div>
 </div>
 <div class="first-container justify-between">Make Your Day
-    <p class="lead text-md p-.5"></p>
-    <div class="day-time justify-center gap-5">
-      <p id="currentDay" class="lead"></p>
-      <p id="currentTime" class="lead"></p>
-    </div>
-    
-    <div class="quote-box">
-      <div id="quote"></div>
-      <div id="author"></div>
-    </div>
+  <p class="lead text-md p-.5"></p>
+  <div class="day-time justify-center gap-5">
+    <p id="currentDay" class="lead"></p>
+    <p id="currentTime" class="lead"></p>
   </div>
+
+  <div class="quote-box">
+    <div id="quote"></div>
+    <div id="author"></div>
+  </div>
+</div>
 <!-- Start Do To Tracker (Left Side) -->
 <div class="customCardOne space-x-2">
   <div class="customCard">
@@ -63,6 +63,7 @@
           class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
       <ul id="could-do" class="connectedSortable panel" data-date="Undated" data-type="Could-do">
       </ul>
+    </div>
   </div>
   <div class="customCard card" id="calendarBox">
     <div class="calendar">
@@ -90,7 +91,7 @@
         <ul class="connectedSortable panel" id="SatUl" data-date="Saturday"></ul>
       </div>
     </div>
-  </div>
+</div>
   <!-- Modal for editing a Todo -->
   <div class="modal fade" id="new-project-modal" tabindex="-1" aria-labelledby="new-project-modal-label"
     aria-hidden="true">
