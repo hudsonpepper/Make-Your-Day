@@ -68,7 +68,7 @@ li {
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
-  background-color:  #001b44;
+  background-color:  #1e3a8a;
   color: white;
   font-size: 1em;
   line-height: 1.5;
@@ -91,7 +91,6 @@ li button {
   border: none;
   height: 1.4em;
   cursor: pointer;
-  background-color: #63a4ca;
   color: black;
   font-size: 1em;
 }
@@ -107,7 +106,7 @@ li button {
 
 .customCard {
   /* display: flex; */
-  background-color:	#e7e7d2;
+  background-color:	#ddddc7;
   border: 1px solid #eceff1;
   border-radius: 8px;
   box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
@@ -150,7 +149,7 @@ ul li:hover {
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
   background-color: #64748b;
-  color: #e5e7eb
+  color: #d7dbe3
 }
 .curDay {
   color: #b91c1c
@@ -189,5 +188,5 @@ li[type="Should-do"] {
 }
 li[type="Could-do"] {
   /* indigo-200 */
-  background-color: #c7d2fe;
+  background-color: #b6c2f0;
 }

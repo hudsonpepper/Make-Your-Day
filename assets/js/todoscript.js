@@ -106,7 +106,7 @@ todoForm.addEventListener("submit", function (event) {
   li.classList.add("ui-state-default");
 
   var button = document.createElement("button");
-  button.textContent = "🗹"; // ✔ ✔️ ☑️ ✅ 
+  button.textContent = "✔️"; // ✔ ✔️ ☑️ ✅ 
   button.classList.add("rounded-full")
 
   //li.appendChild(spanEl);
