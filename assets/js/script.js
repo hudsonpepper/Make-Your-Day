@@ -175,6 +175,9 @@ day.each(function () {
   if ($(this).attr("id") === currWkDay) {
     $(this).parent().addClass("curDay")
   }
+  else {
+    $(this).parent().removeClass("curDay")
+  }
 });
 
 // Accordion 
