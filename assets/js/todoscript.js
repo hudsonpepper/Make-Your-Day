@@ -35,22 +35,22 @@ function renderTodos() {
       }
     }
     else {
-      console.log("event.target", event.target)
-      console.log("Clicked On: ", event.target.innerText.split("\n")[0])
-      console.log("Data(raw): ", event.target.dataset);
-      console.log("Date: ", $(event.target).attr("date"))
-      console.log("Type: ", $(event.target).attr("type"));
-      console.log("Parent: ", $(event.target).parent().attr("id"));
+      // console.log("event.target", event.target)
+      // console.log("Clicked On: ", event.target.innerText.split("\n")[0])
+      // console.log("Data(raw): ", event.target.dataset);
+      // console.log("Date: ", $(event.target).attr("date"))
+      // console.log("Type: ", $(event.target).attr("type"));
+      // console.log("Parent: ", $(event.target).parent().attr("id"));
       setTimeout(() => {
         let pDate = $(event.target).parent().data("date");
-        console.log("Parent Date: ", pDate);
+        //console.log("Parent Date: ", pDate);
         let pType = $(event.target).parent().data("type");
-        console.log("Parent Type: ", pType);
+        //console.log("Parent Type: ", pType);
         $(event.target).attr("date", pDate);
         if (pType != null) {
           $(event.target).attr("type", pType);
         }
-        console.log("After Move:", $(event.target).attr("date"), $(event.target).attr("type"))
+        //console.log("After Move:", $(event.target).attr("date"), $(event.target).attr("type"))
         storeTodos();
       }, 100);
     }
@@ -117,27 +117,22 @@ todoForm.addEventListener("submit", function (event) {
   // Make todo element
 
   var li = document.createElement("li");
-  li.classList.add("ui-state-default");
+  li.classList.add("ui-state-default", "rounded", "border-2");
 
 
   var button2 = document.createElement("button");
-  button2.textContent = "🗹";
-  button2.classList.add("rounded-full");
-  button2.classList.add("delete-btn");
+  button2.textContent = "🗹"; // ✔ ✔️ ☑️ ✅ 
+  button2.classList.add("rounded-full", "delete-btn");
 
-  var p = document.createElement("span");
-  p.textContent = todoText;
+  var spanEl = document.createElement("span");
+  spanEl.textContent = todoText;
 
   var button = document.createElement("button");
-
-  button.textContent = "✔️"; // ✔ ✔️ ☑️ ✅ 
-  button.textContent = "✏️"; // ✔ ✔️ ☑️ ✅ 
-
-  button.classList.add("rounded-full")
-  button.classList.add("edit-btn");
+  button.textContent = "✏️"; 
+  button.classList.add("rounded-full", "edit-btn");
   
   
-  li.appendChild(p);
+  li.appendChild(spanEl);
   li.appendChild(button2);
   li.appendChild(button);
   unsortedList = document.querySelector("#unsorted");
