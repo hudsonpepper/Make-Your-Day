@@ -3,8 +3,10 @@ var todoInput = document.querySelector("#todo-text");
 var todoForm = document.querySelector("#todo-form");
 var unsortedList = document.querySelector("#unsorted");
 var todoCountSpan = document.querySelector("#todo-count");
+var modalFormEl = document.querySelector("#new-project-modal")
 
 
+var textEl,text;
 // The following function renders items in a todo list as <li> elements
 function renderTodos() {
   // Clear unsortedList element and update todoCountSpan
@@ -14,10 +16,23 @@ function renderTodos() {
     // console.log(event);
     // console.log($(this).parent());
     if (event.target.matches("button") === true) {
-      // event.stopPropagation()
-      // Get its data-index value and remove the todo element from the list
-      console.log($(event.target).parent())
-      $(event.target).parent().remove();
+      if (event.target.classList.contains("delete-btn")) {
+        // event.stopPropagation()
+        // Get its data-index value and remove the todo element from the list
+        console.log("Delete");
+        console.log($(event.target).parent())
+        $(event.target).parent().remove();
+      }
+      else {
+        console.log("Edit");
+        text = event.target.parentNode.firstChild.innerText;
+        console.log(event.target.parentNode);
+        console.log("Text(old): ", text);
+        textEl = event.target.parentNode.firstChild;
+        $("#project-name-input").val(text);
+        $("#new-project-modal").modal('show');
+        console.log(textEl);
+      }
     }
     else {
       console.log("event.target", event.target)
@@ -32,7 +47,7 @@ function renderTodos() {
         let pType = $(event.target).parent().data("type");
         console.log("Parent Type: ", pType);
         $(event.target).attr("date", pDate);
-        if(pType != null) {
+        if (pType != null) {
           $(event.target).attr("type", pType);
         }
         console.log("After Move:", $(event.target).attr("date"), $(event.target).attr("type"))
@@ -102,14 +117,25 @@ todoForm.addEventListener("submit", function (event) {
   // Make todo element
 
   var li = document.createElement("li");
-  li.textContent = todoText;
   li.classList.add("ui-state-default");
 
-  var button = document.createElement("button");
-  button.textContent = "🗹"; // ✔ ✔️ ☑️ ✅ 
-  button.classList.add("rounded-full")
 
-  //li.appendChild(spanEl);
+  var button2 = document.createElement("button");
+  button2.textContent = "🗹";
+  button2.classList.add("rounded-full");
+  button2.classList.add("delete-btn");
+
+  var p = document.createElement("span");
+  p.textContent = todoText;
+
+  var button = document.createElement("button");
+  button.textContent = "✏️"; // ✔ ✔️ ☑️ ✅ 
+  button.classList.add("rounded-full")
+  button.classList.add("edit-btn");
+  
+  
+  li.appendChild(p);
+  li.appendChild(button2);
   li.appendChild(button);
   unsortedList = document.querySelector("#unsorted");
 
@@ -132,24 +158,14 @@ todoForm.addEventListener("submit", function (event) {
   storeTodos();
 });
 
-
-
-// Add click event to unsortedList element
-unsortedList.addEventListener("click", function (event) {
-
-  var element = event.target;
-  console.log("click")
-  // Checks if element is a button
-
-});
-function makeTodos(todoText, todoType, todoDate) {
-  console.log("Inside MakeTodos Function");
-  console.log(todoText, todoType, todoDate);
-}
-$("#modal").on("click", function() {
-  console.log("Clicked on Modal");
-
+$("#new-project-modal").on("submit", function (event) {
+  event.preventDefault();
+  console.log(textEl);
+  text = $("#project-name-input").val().trim();
+  console.log("Text(new): ",text);
+  textEl.innerText = text;
+  console.log("TextEl: ", textEl);
+  storeTodos();
 })
-
 
 init()
