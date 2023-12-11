@@ -85,8 +85,8 @@ li button {
   border: none;
   height: 1.4em;
   cursor: pointer;
-  background-color: #ca8263;
-  color: white;
+  background-color: #63a4ca;
+  color: black;
   font-size: 1em;
 }
 
@@ -95,7 +95,7 @@ li button {
 }
 
 .customCardOne ul {
-  background-color: rgb(35, 140, 103);
+  background-color: #1e3a8a;
   padding: 4px;
 }
 
@@ -114,30 +114,74 @@ li button {
 ul {
   list-style-type: none;
   padding: 4px;
-  background-color:rgb(35, 140, 103) !important;
+  background-color:#1e3a8a !important;
 }
 
 
 ul li:hover {
   cursor: grab;
 }
-/* 
-#todo-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 60%;
+
+
+
+
+/* Accordion Styling */
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #cbd5e1;
+  color: #1f2937;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
 }
 
-#todo-list li {
-  margin: 0 3px 3px 3px;
-  padding: 0.4em;
-  padding-left: 1.5em;
-  font-size: 1.4em;
-  height: 18px;
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #64748b;
+  color: #e5e7eb
+}
+.curDay {
+  color: #b91c1c
+}
+.curDay:hover {
+  color: #f87171;
 }
 
-#todo-list li span {
-  position: absolute;
-  margin-left: -1.3em;
-} */
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+li[type="Unsorted"] {
+  
+  background-color: #63a4ca;
+}
+li[type="Must-do"] {
+  background-color: #f87171;
+}
+li[type="Should-do"] {
+  /* yellow-500 */
+  background-color: #eab308 
+}
+li[type="Could-do"] {
+  /* indigo-200 */
+  background-color: #c7d2fe;
+}

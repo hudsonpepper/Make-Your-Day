@@ -9,10 +9,12 @@
   <!-- jQuery UI -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <link rel="shortcut icon" type="image/h-icon" href="https://openclipart.org/download/345884/mixedpaper.svg">
 </head>
 <!-- Taken From 4-26 (local storage todos) -->
 
 <body class="text-gray-700 font-sans" ></body>
+  <button id="modal">Modal</button>
   <div class="first-container justify-between">Make Your Day
     <p class="lead text-md p-.5"></p>
     <div class="day-time justify-center gap-5">
@@ -42,30 +44,37 @@
       </form>
       <p>Todo Count: <span id="todo-count">0</span></p>
       <div id="todo-div">
-        <h2>Unsorted</h2>
-        <ul id="todo-list" class="connectedSortable">
+        <button class="accordion">Unsorted: <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul id="unsorted" class="connectedSortable panel" data-date="Undated" data-type="Unsorted">
         </ul>
-        <h2>Must Do: </h2>
-        <ul id="must-do" class="connectedSortable">
+        <button class="accordion">Must Do: <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul id="must-do" class="connectedSortable panel" data-date="Undated" data-type="Must-do">
         </ul>
-        <h2>Should Do: </h2>
-        <ul id="should-do" class="connectedSortable">
+        <button class="accordion">Should Do: <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul id="should-do" class="connectedSortable panel" data-date="Undated" data-type="Should-do">
         </ul>
-        <h2>Could Do: </h2>
-        <ul id="could-do" class="connectedSortable">
+        <button class="accordion">Could Do: <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul id="could-do" class="connectedSortable panel" data-date="Undated" data-type="Could-do">
         </ul>
       </div>
     </div>
     <div class="customCard card" id="calendarBox">
       <div class="calendar">
         <div class="dayView">
-          <ul class="day connectedSortable" id="Sun" index="0">Sunday</ul>
-          <ul class="day connectedSortable" id="Mon" index="1">Monday</ul>
-          <ul class="day connectedSortable" id="Tues" index="2">Tuesday</ul>
-          <ul class="day connectedSortable" id="Wed" index="3">Wednsday</ul>
-          <ul class="day connectedSortable" id="Thu" index="4">Thursday</ul>
-          <ul class="day connectedSortable" id="Fri" index="5">Friday</ul>
-          <ul class="day connectedSortable" id="Sat" index="6">Saturday</ul>
+          <button class="accordion"><span class="day" id="Sun" index="0"></span> Sunday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+          <ul class="connectedSortable panel" id="SunUl" data-date="Sunday"></ul>
+          <button class="accordion"><span class="day" id="Mon" index="1"></span> Monday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+          <ul class="connectedSortable panel" id="MonUl" data-date="Monday"></ul>
+          <button class="accordion"><span class="day" id="Tues" index="2"></span> Tuesday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+          <ul class="connectedSortable panel" id="TuesUl" data-date="Tuesday"></ul>
+          <button class="accordion"><span class="day" id="Wed" index="3"></span> Wednsday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+          <ul class="connectedSortable panel" id="WedUl" data-date="Wednesday"></ul>
+          <button class="accordion"><span class="day" id="Thu" index="4"></span> Thursday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+          <ul class="connectedSortable panel" id="ThuUl" data-date="Thursday"></ul>
+          <button class="accordion"><span class="day" id="Fri" index="5"></span> Friday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+          <ul class="connectedSortable panel" id="FriUl" data-date="Friday"></ul>
+          <button class="accordion"><span class="day" id="Sat" index="6"></span> Saturday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+          <ul class="connectedSortable panel" id="SatUl" data-date="Saturday"></ul>
         </div>
       </div>
     </div>
