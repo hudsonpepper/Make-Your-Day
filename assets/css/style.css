@@ -20,6 +20,7 @@ body {
 .first-container {
   text-align: center;
   font-size: 30px;
+  margin-top: 30px;
 }
 
 .lead {
@@ -32,6 +33,11 @@ body {
 
 .current-weather {
   display: flex;
+  position: fixed;
+  background-color: #1e3a8a;
+  color: white;
+  min-width: 100%;
+  margin-bottom: 50px;
 }
 
 .quote-box {
