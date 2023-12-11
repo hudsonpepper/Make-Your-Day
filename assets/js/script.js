@@ -2,8 +2,8 @@ const currentCity = document.querySelector("#current-city");
 const currentTemp = document.querySelector("#current-temp");
 const currentWind = document.querySelector("#current-wind");
 const currentHumidity = document.querySelector("#current-humidity");
-const currentCondition = document.querySelector("#current-condition")
-const weatherIcon = document.querySelector("#icon")
+const currentCondition = document.querySelector("#current-condition");
+const weatherIcon = document.querySelector("#icon");
 
 
 var currWkDay = dayjs().format("ddd");
@@ -91,7 +91,7 @@ async function searchWeather() {
     });
 };
 
-
+setInterval(searchWeather, 300000);
 searchWeather();
 
 function getQuote() {
