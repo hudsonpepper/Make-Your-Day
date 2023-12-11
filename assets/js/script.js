@@ -24,6 +24,9 @@ for (var i = 0; i < daysArray.length; i++) {
 //console.log(currDayIndex);
 //Set month length
 var monthArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+if (curYear % 400 == 0 || (curYear % 4 == 0 && curYear % 100 != 0)){
+  monthArr[1] = 29;
+}
 // console.log(currMonth);
 var monthLen = monthArr[currMonth - 1];
 

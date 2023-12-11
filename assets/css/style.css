@@ -171,6 +171,7 @@ ul li:hover {
 }
 
 li[type="Unsorted"] {
+  
   background-color: #63a4ca;
 }
 li[type="Must-do"] {
