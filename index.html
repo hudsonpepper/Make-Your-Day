@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Expanded Workday</title>
+  <!-- Bootstrap for Modal -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <!-- Bootstrap Alternative V2: Tailwind-CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- jQuery UI -->
@@ -22,8 +25,7 @@
     <div id="current-wind"></div>
     <div id="current-humidity"></div>
 </div>
-  <button id="modal">Modal</button>
-  <div class="first-container justify-between">Make Your Day
+<div class="first-container justify-between">Make Your Day
     <p class="lead text-md p-.5"></p>
     <div class="day-time justify-center gap-5">
       <p id="currentDay" class="lead"></p>
@@ -35,6 +37,7 @@
       <div id="author"></div>
     </div>
   </div>
+
   <!-- Start Do To Tracker (Left Side) -->
   <div class="customCardOne space-x-2">
     <div class="customCard">
@@ -57,38 +60,81 @@
         <button class="accordion">Could Do: <span class="rounded-full bg-violet-200 text-violet-900 border-2 border-violet-900 hidden"></span></button>
         <ul id="could-do" class="connectedSortable panel" data-date="Undated" data-type="Could-do">
         </ul>
-      </div>
-    </div>
-    <div class="customCard card" id="calendarBox">
-      <div class="calendar">
-        <div class="dayView">
-          <button class="accordion"><span class="day" id="Sun" index="0"></span> Sunday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
-          <ul class="connectedSortable panel" id="SunUl" data-date="Sunday"></ul>
-          <button class="accordion"><span class="day" id="Mon" index="1"></span> Monday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
-          <ul class="connectedSortable panel" id="MonUl" data-date="Monday"></ul>
-          <button class="accordion"><span class="day" id="Tues" index="2"></span> Tuesday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
-          <ul class="connectedSortable panel" id="TuesUl" data-date="Tuesday"></ul>
-          <button class="accordion"><span class="day" id="Wed" index="3"></span> Wednsday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
-          <ul class="connectedSortable panel" id="WedUl" data-date="Wednesday"></ul>
-          <button class="accordion"><span class="day" id="Thu" index="4"></span> Thursday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
-          <ul class="connectedSortable panel" id="ThuUl" data-date="Thursday"></ul>
-          <button class="accordion"><span class="day" id="Fri" index="5"></span> Friday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
-          <ul class="connectedSortable panel" id="FriUl" data-date="Friday"></ul>
-          <button class="accordion"><span class="day" id="Sat" index="6"></span> Saturday <span class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
-          <ul class="connectedSortable panel" id="SatUl" data-date="Saturday"></ul>
-        </div>
-      </div>
-    </div>
-
   </div>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <!-- jQuery UI -->
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./assets/js/todoscript.js"></script>
-  <script type="text/javascript" src="./assets/js/script.js"></script>
+  <div class="customCard card" id="calendarBox">
+    <div class="calendar">
+      <div class="dayView">
+        <button class="accordion"><span class="day" id="Sun" index="0"></span> Sunday <span
+            class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul class="connectedSortable panel" id="SunUl" data-date="Sunday"></ul>
+        <button class="accordion"><span class="day" id="Mon" index="1"></span> Monday <span
+            class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul class="connectedSortable panel" id="MonUl" data-date="Monday"></ul>
+        <button class="accordion"><span class="day" id="Tues" index="2"></span> Tuesday <span
+            class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul class="connectedSortable panel" id="TuesUl" data-date="Tuesday"></ul>
+        <button class="accordion"><span class="day" id="Wed" index="3"></span> Wednsday <span
+            class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul class="connectedSortable panel" id="WedUl" data-date="Wednesday"></ul>
+        <button class="accordion"><span class="day" id="Thu" index="4"></span> Thursday <span
+            class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul class="connectedSortable panel" id="ThuUl" data-date="Thursday"></ul>
+        <button class="accordion"><span class="day" id="Fri" index="5"></span> Friday <span
+            class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul class="connectedSortable panel" id="FriUl" data-date="Friday"></ul>
+        <button class="accordion"><span class="day" id="Sat" index="6"></span> Saturday <span
+            class="rounded-full bg-violet-500 text-violet-200 border-2 border-violet-200 hidden"></span></button>
+        <ul class="connectedSortable panel" id="SatUl" data-date="Saturday"></ul>
+      </div>
+    </div>
+  </div>
+  <!-- Modal for editing a Todo -->
+  <div class="modal fade" id="new-project-modal" tabindex="-1" aria-labelledby="new-project-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="project-form">
+          <div class="modal-header custom-modal-header">
+            <h5 class="modal-title" id="new-project-modal-label">
+              Edit your todo
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="project-name-input">Updated Name</label>
+              <input type="text" id="project-name-input" class="form-control" placeholder="Enter the project's name"
+                required />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!--
+               The data-bs-dismiss attribute tells Bootstrap to hide the <div
+               class="modal-footer"> element on click.
+             -->
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-custom" data-bs-dismiss="modal">
+              Add Project
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap Modal JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!-- jQuery UI -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+  integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./assets/js/todoscript.js"></script>
+<script type="text/javascript" src="./assets/js/script.js"></script>
 
 </body>
 
