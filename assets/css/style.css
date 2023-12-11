@@ -85,8 +85,8 @@ li button {
   border: none;
   height: 1.4em;
   cursor: pointer;
-  background-color: #ca8263;
-  color: white;
+  background-color: #63a4ca;
+  color: black;
   font-size: 1em;
 }
 
@@ -95,7 +95,7 @@ li button {
 }
 
 .customCardOne ul {
-  background-color: rgb(35, 140, 103);
+  background-color: #1e3a8a;
   padding: 4px;
 }
 
@@ -114,7 +114,7 @@ li button {
 ul {
   list-style-type: none;
   padding: 4px;
-  background-color:rgb(35, 140, 103) !important;
+  background-color:#1e3a8a !important;
 }
 
 
@@ -140,6 +140,12 @@ ul li:hover {
   transition: 0.4s;
 }
 
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #64748b;
+  color: #e5e7eb
+}
 .curDay {
   color: #b91c1c
 }
@@ -147,14 +153,6 @@ ul li:hover {
   color: #f87171;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-  background-color: #64748b;
-  color: #e5e7eb
-}
-.active, .accordion:hover.curDay {
-  color: #f87171;
-}
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
@@ -170,4 +168,19 @@ ul li:hover {
 
 .active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+li[type="Unsorted"] {
+  background-color: #63a4ca;
+}
+li[type="Must-do"] {
+  background-color: #f87171;
+}
+li[type="Should-do"] {
+  /* yellow-500 */
+  background-color: #eab308 
+}
+li[type="Could-do"] {
+  /* indigo-200 */
+  background-color: #c7d2fe;
 }

@@ -106,7 +106,8 @@ todoForm.addEventListener("submit", function (event) {
   li.classList.add("ui-state-default");
 
   var button = document.createElement("button");
-  button.textContent = "✔️";
+  button.textContent = "🗹"; // ✔ ✔️ ☑️ ✅ 
+  button.classList.add("rounded-full")
 
   //li.appendChild(spanEl);
   li.appendChild(button);
@@ -145,6 +146,10 @@ function makeTodos(todoText, todoType, todoDate) {
   console.log("Inside MakeTodos Function");
   console.log(todoText, todoType, todoDate);
 }
+$("#modal").on("click", function() {
+  console.log("Clicked on Modal");
+
+})
 
 
 init()
