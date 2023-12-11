@@ -51,12 +51,15 @@ let longitude;
 
 
 async function getGeo() {
-
-
+  console.log("Finding Geo");
+  $(currentCity)[0].textContent = "Please Wait: Finding Location..."
+  $(weatherIcon).attr("src", "https://cdn.360-value.com/iv360/21.1.50/resources/images/spinner.gif");
+  $(weatherIcon).attr("height", "64px");
+  $(weatherIcon).attr("width", "64px");
   let geo = await new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject)
   })
-
+  console.log("Geo: (inside)", geo);
   return {
     latitude: geo.coords.latitude,
     longitude: geo.coords.longitude
@@ -65,9 +68,10 @@ async function getGeo() {
 // Search Weather function pulling weather data from weather API 
 async function searchWeather() {
   let geo = await getGeo()
-  // console.log(geo);
+  console.log("Geo Found: ", geo, dayjs());
   var requestUrl = `https://weatherapi-com.p.rapidapi.com/current.json?q=${geo.latitude},${geo.longitude}`;
-
+  $(currentCity)[0].textContent = "Please Wait: Weather Loading..."
+  $(weatherIcon).attr("src", "https://cdn.360-value.com/iv360/21.1.50/resources/images/spinner.gif");
   fetch(requestUrl, {
     headers: {
       'X-RapidAPI-Key': 'cbfc516474mshe8f9ce0a07a3f7fp12f71fjsnbb5e4699df4f',
@@ -195,7 +199,7 @@ for (let i = 0; i < accElArray.length; i++) {
     let numLi;
     console.log("Number of Elements:", numLi)
     var panel = this.nextElementSibling;
-    if(panel.style.display === "block") {
+    if (panel.style.display === "block") {
       panel.style.display = "none";
     }
     else {
@@ -217,11 +221,11 @@ for (let i = 0; i < accElArray.length; i++) {
     else {
       console.log("In else statement");
       let typeArr = ["Unsorted", "Must-do", "Should-do", "Could-do"];
-      let spanArr = [1,2,3,4];
-      let numLiArr = [0,0,0,0];
+      let spanArr = [1, 2, 3, 4];
+      let numLiArr = [0, 0, 0, 0];
       var panel = this.nextElementSibling;
       console.log("Panel Length", $(panel).children().length)
-      for(let i=0; i< $(panel).children().length; i++) {
+      for (let i = 0; i < $(panel).children().length; i++) {
         console.log("i", i)
         console.log($(panel).children().eq(i).attr("type"));
         let j = typeArr.findIndex((element) => element == $(panel).children().eq(i).attr("type"));
@@ -229,8 +233,8 @@ for (let i = 0; i < accElArray.length; i++) {
         numLiArr[j]++;
         console.log(numLiArr);
       }
-      for(let i=0; i<4; i++) {
-        
+      for (let i = 0; i < 4; i++) {
+
         if (panel.style.display === "none") {
           $(this).children().eq(spanArr[i]).text(numLiArr[i]);
           if (numLiArr[i] > 0) {
@@ -244,8 +248,8 @@ for (let i = 0; i < accElArray.length; i++) {
 
         }
       }
-      storeTodos();
     }
+    storeTodos();
     /* Toggle between hiding and showing the active panel */
 
   });
