@@ -110,7 +110,7 @@ li button {
 
 .customCard {
   /* display: flex; */
-  background-color:	#ddddc7;
+  background-color:	#d6d3d1;
   border: 1px solid #eceff1;
   border-radius: 8px;
   box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
@@ -141,7 +141,7 @@ ul li:hover {
   background-color: #cbd5e1;
   color: #1f2937;
   cursor: pointer;
-  padding: 18px;
+  padding: 10px;
   width: 100%;
   text-align: left;
   border: none;
@@ -198,4 +198,29 @@ li[type="Could-do"] {
   border-color: #4c1d95;
   background-color: #ddd6fe;
   color: #4c1d95;
+}
+
+#unsorted-btn {
+  color: #1e3a8a;
+}
+#unsorted-btn:hover, #unsorted-btn.active {
+  color: #bfdbfe;
+}
+#must-do-btn{
+  color: #881337;
+}
+#must-do-btn:hover, #must-do-btn.active {
+  color: #fecdd3;
+}
+#should-do-btn {
+  color: #78350f;
+}
+#should-do-btn:hover, #should-do-btn.active {
+  color: #fde68a;
+}
+#could-do-btn {
+  color: #4c1d95;
+}
+#could-do-btn:hover, #could-do-btn.active {
+  color: #ddd6fe;
 }
