@@ -129,7 +129,10 @@ todoForm.addEventListener("submit", function (event) {
   p.textContent = todoText;
 
   var button = document.createElement("button");
+
+  button.textContent = "✔️"; // ✔ ✔️ ☑️ ✅ 
   button.textContent = "✏️"; // ✔ ✔️ ☑️ ✅ 
+
   button.classList.add("rounded-full")
   button.classList.add("edit-btn");
   
