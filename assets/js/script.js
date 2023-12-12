@@ -7,14 +7,12 @@ const weatherIcon = document.querySelector("#icon");
 
 
 var currWkDay = dayjs().format("ddd");
-
 var currDay = dayjs().format("D");
-
 var currMonth = dayjs().format("MM");
 var curYear = dayjs().format("YYYY");
 var day = $(".day");
 //Set curr day index
-var currDayIndex = 0;
+var currDayIndex;
 var daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 for (var i = 0; i < daysArray.length; i++) {
   if (currWkDay === daysArray[i]) {

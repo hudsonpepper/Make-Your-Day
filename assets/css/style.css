@@ -1,36 +1,23 @@
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* Default */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-size: 20px;
 }
-
 body {
   font-family: "Roboto", sans-serif;
   background-color: #eff5f8;
   color: #001b44;
-  font-size: 20px;
-}
-.customCardOne {
-  font-size: 20px;
-}
-.first-container {
-  text-align: center;
-  font-size: 30px;
-  margin-top: 100px;
 }
 
-.lead {
-  font-size: 20px;
-}
-
-.day-time {
-  display: flex;
-}
-
+/* Fixed Weather Header */
 .current-weather {
   display: flex;
   position: fixed;
@@ -43,10 +30,42 @@ body {
   z-index: 10;
 }
 
-.quote-box {
-  font-size: 15px;
+/* Main Container */
+.customCardOne {
+  font-size: 1rem;
+  display:flex;
+  z-index: 0;
+}
+/* Sub-Containers */
+.customCard {
+  background-color:	#d6d3d1;
+  border: 1px solid #eceff1;
+  margin: 5px;
+  padding: 20px;
+  width: 100%;
 }
 
+/* "Make Your Day" Header */
+.first-container {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 100px;
+}
+/* Date and Time */
+.lead {
+  font-size: 1rem;
+}
+
+.day-time {
+  display: flex;
+}
+
+/* Quote Box */
+.quote-box {
+  font-size: 0.75rem;
+}
+
+/* Form Inputs */
 label, p {
   font-size: 1em;
 }
@@ -60,21 +79,27 @@ input {
   border: 1px solid #001b44;
 }
 
+/* Header of Both To do and Weekly View */
 h1 {
   text-align: center;
 }
 
 
+/* List Element CSS */
+.customCardOne ul {
+  background-color: #1e3a8a;
+  padding: 4px;
+}
 
 li {
   height: 2em;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  padding: .25rem;
   background-color:  #1e3a8a;
   color: white;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5rem;
   overflow:auto;
   position:relative;
 }
@@ -83,7 +108,6 @@ li span {
   position:absolute;
   overflow:hidden;
 }
-
 
 li:before {
   content: "\200B";
@@ -106,32 +130,9 @@ li button {
   z-index: 3;
 }
 
-.customCardOne {
-  display:flex;
-  z-index: 0;
-}
-
-.customCardOne ul {
-  background-color: #1e3a8a;
-  padding: 4px;
-}
-
-.customCard {
-  /* display: flex; */
-  /* #ddddc7 */
-  background-color:	#d6d3d1;
-  border: 1px solid #eceff1;
-  /* border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 2px 4px 3px; */
-  margin: 5px;
-  padding: 20px;
-  width: 100%;
-}
-
 ul {
   list-style-type: none;
-  padding: 4px;
+  padding: 0.2rem;
   background-color:#1e3a8a !important;
 }
 
@@ -180,13 +181,14 @@ ol li {
   color: #f87171;
 }
 
-/* Style the accordion panel. Note: hidden by default */
+/* Style the accordion panel. Note: block by default */
 .panel {
   padding: 0 18px;
   display: block;
   overflow: hidden;
 }
 
+/* Makes Accordion have + or - Depending if it is Active */
 .accordion:after {
   content: '\02795'; /* Unicode character for "plus" sign (+) */
   float: right;
@@ -197,6 +199,7 @@ ol li {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
+/* Specialized Styling For Different Type Attributes */
 li[type="Unsorted"] {
   border-color: #1e3a8a;
   background-color: #bfdbfe;
@@ -218,6 +221,7 @@ li[type="Could-do"] {
   color: #4c1d95;
 }
 
+/* Styling for Specific Accordion Buttons */
 #unsorted-btn {
   color: #1e3a8a;
 }
