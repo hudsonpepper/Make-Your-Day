@@ -1,52 +1,82 @@
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+/* Default */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-size: 20px;
 }
-
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Arimo', sans-serif;
   background-color: #eff5f8;
   color: #001b44;
-  font-size: 20px;
-}
-.customCardOne {
-  font-size: 20px;
-}
-.first-container {
-  text-align: center;
-  font-size: 30px;
-  margin-top: 100px;
 }
 
-.lead {
-  font-size: 20px;
-}
-
-.day-time {
-  display: flex;
-}
-
+/* Fixed Weather Header */
 .current-weather {
   display: flex;
   position: fixed;
   background-color: #1e3a8a;
   color: white;
   min-width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   top: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   z-index: 10;
 }
 
-.quote-box {
-  font-size: 15px;
+/* Main Container */
+.customCardOne {
+  font-size: 1rem;
+  display:flex;
+  z-index: 0;
+}
+/* Sub-Containers */
+.customCard {
+  background-color:	#d6d3d1;
+  border: 1px solid #eceff1;
+  margin: 5px;
+  padding: 20px;
+  width: 100%;
 }
 
+/* "Make Your Day" Header */
+.first-container {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 100px;
+}
+
+.pageTitle {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  padding-bottom: 0.5rem
+}
+/* Date and Time */
+.lead {
+  font-size: 1rem;
+}
+
+.day-time {
+  display: flex;
+}
+
+/* Quote Box */
+.quote-box {
+  font-size: 0.75rem;
+}
+#quote {
+  font-style: italic;
+}
+
+/* Form Inputs */
 label, p {
   font-size: 1em;
 }
@@ -60,23 +90,35 @@ input {
   border: 1px solid #001b44;
 }
 
+/* Header of Both To do and Weekly View */
 h1 {
   text-align: center;
 }
 
 
+/* List Element CSS */
+.customCardOne ul {
+  background-color: #1e3a8a;
+  padding: 4px;
+}
 
 li {
   height: 2em;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  padding: .25rem;
   background-color:  #1e3a8a;
   color: white;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  overflow:auto;
+  position:relative;
 }
-
+li span {
+  max-width:80%;
+  position:absolute;
+  overflow:hidden;
+}
 
 li:before {
   content: "\200B";
@@ -96,33 +138,12 @@ li button {
   cursor: pointer;
   color: black;
   font-size: 1em;
-}
-
-.customCardOne {
-  display:flex;
-  z-index: 0;
-}
-
-.customCardOne ul {
-  background-color: #1e3a8a;
-  padding: 4px;
-}
-
-.customCard {
-  /* display: flex; */
-  background-color:	#ddddc7;
-  border: 1px solid #eceff1;
-  border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
-  margin: 60px auto;
-  padding: 20px;
-  width: 80%;
+  z-index: 3;
 }
 
 ul {
   list-style-type: none;
-  padding: 4px;
+  padding: 0.2rem;
   background-color:#1e3a8a !important;
 }
 
@@ -131,6 +152,15 @@ ul li:hover {
   cursor: grab;
 }
 
+ol {
+  list-style-type: decimal;
+  background-color: #d6d3d1;
+}
+ol li {
+  font-size: medium !important;
+  background-color: #d6d3d1;
+  color: #1e3a8a;
+}
 
 
 
@@ -141,7 +171,7 @@ ul li:hover {
   background-color: #cbd5e1;
   color: #1f2937;
   cursor: pointer;
-  padding: 18px;
+  padding: 10px;
   width: 100%;
   text-align: left;
   border: none;
@@ -161,14 +191,18 @@ ul li:hover {
 .curDay:hover {
   color: #f87171;
 }
+button.active.curDay {
+  color: #f87171 !important;
+}
 
-/* Style the accordion panel. Note: hidden by default */
+/* Style the accordion panel. Note: block by default */
 .panel {
   padding: 0 18px;
-  display: none;
+  display: block;
   overflow: hidden;
 }
 
+/* Makes Accordion have + or - Depending if it is Active */
 .accordion:after {
   content: '\02795'; /* Unicode character for "plus" sign (+) */
   float: right;
@@ -179,18 +213,50 @@ ul li:hover {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
+/* Specialized Styling For Different Type Attributes */
 li[type="Unsorted"] {
-  
-  background-color: #63a4ca;
+  border-color: #1e3a8a;
+  background-color: #bfdbfe;
+  color: #1e3a8a;
 }
 li[type="Must-do"] {
-  background-color: #f87171;
+  border-color: #881337;
+  background-color: #fecdd3;
+  color: #881337;
 }
 li[type="Should-do"] {
-  /* yellow-500 */
-  background-color: #eab308 
+  border-color: #78350f;
+  background-color: #fde68a; 
+  color: #78350f;
 }
 li[type="Could-do"] {
-  /* indigo-200 */
-  background-color: #b6c2f0;
+  border-color: #4c1d95;
+  background-color: #ddd6fe;
+  color: #4c1d95;
+}
+
+/* Styling for Specific Accordion Buttons */
+#unsorted-btn {
+  color: #1e3a8a;
+}
+#unsorted-btn:hover, #unsorted-btn.active {
+  color: #bfdbfe;
+}
+#must-do-btn{
+  color: #881337;
+}
+#must-do-btn:hover, #must-do-btn.active {
+  color: #fecdd3;
+}
+#should-do-btn {
+  color: #78350f;
+}
+#should-do-btn:hover, #should-do-btn.active {
+  color: #fde68a;
+}
+#could-do-btn {
+  color: #4c1d95;
+}
+#could-do-btn:hover, #could-do-btn.active {
+  color: #ddd6fe;
 }
