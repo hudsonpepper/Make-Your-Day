@@ -79,7 +79,7 @@ function renderTodos() {
     }).disableSelection();
   });
   // Sets todoCount: Note the 3 is to make sure it isn't overcounting from the instruction lis
-  todoCount = document.querySelectorAll("li").length - 3;
+  todoCount = document.querySelectorAll("li").length - 4;
   todoCountSpan.textContent = todoCount;
 }
 
@@ -110,7 +110,7 @@ function storeTodos() {
   localStorage.setItem("todos", todoDiv.innerHTML);
   localStorage.setItem("calendar", document.querySelector("#calendarBox").innerHTML);
   // Reset todoCount
-  todoCount = document.querySelectorAll("li").length - 3;
+  todoCount = document.querySelectorAll("li").length - 4;
   todoCountSpan.textContent = todoCount;
 }
 
