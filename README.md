@@ -23,3 +23,12 @@ This is meant to act as an interactive personal planner which helps you manage g
 2. CSS
 3. JavaScript
 4. dayJS
+5. Tailwind CSS
+6. Bootstrap
+7. Bootstrap UI
+8. jQuery
+9. jQuery UI
+10. OpenWeather API https://weatherapi-com
+11. Forismatic API https://api.forismatic.com
+12. GitHub
+13. GitHub Pages

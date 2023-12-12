@@ -1,75 +1,85 @@
+// ** Begin: Query Selectors **
 var todoDiv = document.querySelector("#todo-div")
 var todoInput = document.querySelector("#todo-text");
 var todoForm = document.querySelector("#todo-form");
 var unsortedList = document.querySelector("#unsorted");
 var todoCountSpan = document.querySelector("#todo-count");
 var modalFormEl = document.querySelector("#new-project-modal")
+// ** End: Query Selectors **
+
+// ** Begin: Initializations **
+var textEl, text;
+// ** End: Initializations **
 
 
-var textEl,text;
-// The following function renders items in a todo list as <li> elements
+
+// ** Begin: Functions **
+// The following function renders Items from Local Storage as <li> elements
 function renderTodos() {
-  // Clear unsortedList element and update todoCountSpan
+  // Relogs Last HTML Layout of TodoDiv and Calendar
   todoDiv.innerHTML = localStorage.getItem("todos");
   document.querySelector("#calendarBox").innerHTML = localStorage.getItem("calendar");
+
+  // Creates Event Listener On Uls
   $("ul").on("mouseup", "li", function (event) {
-    // console.log(event);
-    // console.log($(this).parent());
+    // Did the User Click on a Button? 
     if (event.target.matches("button") === true) {
+      // Did the User Click On the Delete Button?
       if (event.target.classList.contains("delete-btn")) {
-        // event.stopPropagation()
         // Get its data-index value and remove the todo element from the list
-        console.log("Delete");
-        console.log($(event.target).parent())
         $(event.target).parent().remove();
       }
+      // If it isn't the Delete Button, It is the Edit Button
       else {
-        console.log("Edit");
+        // Grab Last Text Input
         text = event.target.parentNode.firstChild.innerText;
-        console.log(event.target.parentNode);
-        console.log("Text(old): ", text);
+        // Grabs What Li The Edit Button Corresponds to
         textEl = event.target.parentNode.firstChild;
+        // Populates The Modal With Previous Text
         $("#project-name-input").val(text);
+        // Shows the Modal
         $("#new-project-modal").modal('show');
-        console.log(textEl);
       }
     }
+    // If The User Didn't Click On a Button
     else {
-      // console.log("Clicked On: ", event.target.innerText.split("\n")[0])
-      // console.log("Data(raw): ", event.target.dataset);
-      // console.log("Date: ", $(event.target).attr("date"))
-      // console.log("Type: ", $(event.target).attr("type"));
-      // console.log("Parent: ", $(event.target).parent().attr("id"));
+      // Give jQuery UI time to finish reorder if necessary
       setTimeout(() => {
         let newTarget;
-        if(event.target.matches("span") === true) {
+        // Make sure newTarget is grabbing the li, NOT the span
+        // If the User clicked on the span grab the parent
+        if (event.target.matches("span") === true) {
           newTarget = event.target.parentNode;
         }
+        // If the User didn't grab the span, we are good. 
         else {
           newTarget = event.target;
         }
+        // Grab Parent Data Attributes date and type
         let pDate = $(newTarget).parent().data("date");
-        //console.log("Parent Date: ", pDate);
         let pType = $(newTarget).parent().data("type");
-        //console.log("Parent Type: ", pType);
+        // Reset date Attribute for li
         $(newTarget).attr("date", pDate);
+        // If There is an update for type Attribute, update it
         if (pType != null) {
           $(newTarget).attr("type", pType);
         }
-        //console.log("After Move:", $(event.target).attr("date"), $(event.target).attr("type"))
+        // Relog Data
         storeTodos();
       }, 100);
     }
+    // Relog Data
     setTimeout(storeTodos, 120);
   })
-  // Makes Li sortable (src = https://jqueryui.com/sortable/)
+
+  // Function Makes Li sortable (src = https://jqueryui.com/sortable/)
   $(function () {
     $("#unsorted, #must-do, #should-do, #could-do, #SunUl, #MonUl, #TuesUl, #WedUl, #ThuUl, #FriUl, #SatUl").sortable({
       connectWith: ".connectedSortable"
     }).disableSelection();
   });
+  // Sets todoCount: Note the 3 is to make sure it isn't overcounting from the instruction lis
   todoCount = document.querySelectorAll("li").length - 3;
-
   todoCountSpan.textContent = todoCount;
 }
 
@@ -96,80 +106,73 @@ function init() {
 }
 
 function storeTodos() {
-  // Stringify and set key in localStorage to todos array
-  // todoDiv = document.querySelector("#todo-div")
-  // console.log((todoDiv.innerHTML));
+  // Stringify and set key in localStorage to store todos and calendar state
   localStorage.setItem("todos", todoDiv.innerHTML);
   localStorage.setItem("calendar", document.querySelector("#calendarBox").innerHTML);
+  // Reset todoCount
   todoCount = document.querySelectorAll("li").length - 3;
   todoCountSpan.textContent = todoCount;
-  // console.log("Todo Count", todoCount)
 }
 
+// ----- Event Listener For "Add a Todo" -----
 todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log("submit")
   var todoText = todoInput.value.trim();
-  console.log(todoText)
   // Return from function early if submitted todoText is blank
   if (todoText === "") {
-    console.log("empty input")
     return;
   }
-
   // Clear the input
   todoInput.value = "";
 
   // Make todo element
-
   var li = document.createElement("li");
   li.classList.add("ui-state-default", "rounded", "border-2");
 
+  // Makes Span for Todo Text
+  var spanEl = document.createElement("span");
+  spanEl.textContent = todoText;
 
+  // Makes Delete Button
   var button2 = document.createElement("button");
   button2.textContent = "🗹"; // ✔ ✔️ ☑️ ✅ 
   button2.classList.add("rounded-full", "delete-btn");
 
-  var spanEl = document.createElement("span");
-  spanEl.textContent = todoText;
-
+  // Makes Edit Button
   var button = document.createElement("button");
-  button.textContent = "✏️"; 
+  button.textContent = "✏️";
   button.classList.add("rounded-full", "edit-btn");
-  
-  
+
+  // Appends Span and Buttons to Li
   li.appendChild(spanEl);
   li.appendChild(button2);
   li.appendChild(button);
   unsortedList = document.querySelector("#unsorted");
 
-  console.log("Unsorted List: ", unsortedList);
+  // Adds Attributes to li, and appends it to page
   $(li).attr("type", "Unsorted");
   $(li).attr("date", "Undated");
   unsortedList.appendChild(li)
-  // console.log($(unsortedList).children());
 
-
+  // Does another Check for Unsorted List Pill Preview
   let numLi = $(unsortedList).children().length;
   $(unsortedList).prev().children().eq(0).text(numLi);
-  console.log("NumLi", numLi);
-  if (numLi > 0 && !($("#unsorted-btn").hasClass("active"))) {
-    $("Inside the conditional")
 
+  // Checks if Accordion is Closed and There are Positive number of Lis
+  if (numLi > 0 && !($("#unsorted-btn").hasClass("active"))) {
     $(unsortedList).prev().children().eq(0).removeClass("hidden");
   }
-  // end Make Element
+  // Relogs Todos After Change
   storeTodos();
 });
 
+// Event Listener for Modal
 $("#new-project-modal").on("submit", function (event) {
   event.preventDefault();
-  console.log(textEl);
   text = $("#project-name-input").val().trim();
-  console.log("Text(new): ",text);
   textEl.innerText = text;
-  console.log("TextEl: ", textEl);
   storeTodos();
 })
 
+// Initializes Page
 init()
