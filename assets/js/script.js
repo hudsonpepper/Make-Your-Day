@@ -5,7 +5,8 @@ const currentWind = document.querySelector("#current-wind");
 const currentHumidity = document.querySelector("#current-humidity");
 const currentCondition = document.querySelector("#current-condition");
 const weatherIcon = document.querySelector("#icon");
-const day = $(".day");
+var day = $(".day");
+console.log(day)
 var accElArray = $(".accordion");
 // ** End: Query Selectors **
 
@@ -190,6 +191,8 @@ day.each(function () {
 
 // ----- Function Styles Current Day of the Week -----
 day.each(function () {
+  console.log(currWkDay)
+  console.log("Loop", $(this).attr("id"))
   if ($(this).attr("id") === currWkDay) {
     $(this).parent().addClass("curDay")
   }

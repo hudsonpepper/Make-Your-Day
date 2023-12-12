@@ -180,6 +180,9 @@ ol li {
 .curDay:hover {
   color: #f87171;
 }
+button.active.curDay {
+  color: #f87171 !important;
+}
 
 /* Style the accordion panel. Note: block by default */
 .panel {
