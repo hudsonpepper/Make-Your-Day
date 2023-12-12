@@ -1,6 +1,8 @@
 # Make Your Day [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is meant to act as an interactive personal planner to help you manage goals, tasks, and events throughout your week while also providing motivational quotes and accurate weather conditions for your current location (no input required)!
+This project is a collaboration between Brendan Daly (https://github.com/bdaly101), Christopher Young (https://github.com/cmfyoung), and Hudson Pepper (https://github.com/hudsonpepper).
+
+It is meant to act as an interactive personal planner to help you manage goals, tasks, and events throughout your week while also providing motivational quotes and accurate weather conditions for your current location (no input required)!
 
 
 The deployed site may be accessed here:
@@ -36,6 +38,7 @@ https://hudsonpepper.github.io/Make-Your-Day/
 	THEN I am presented with a new quote, updated weather, and an un-altered to-do list from before
 	```
 ## Technologies Used:
+
 1. HTML
 2. CSS
 3. JavaScript
@@ -52,8 +55,7 @@ https://hudsonpepper.github.io/Make-Your-Day/
 14. Google Fonts
 
 ## Credit
-This project is a collaboration between Brendan Daly (https://github.com/bdaly101), Christopher Young (https://github.com/cmfyoung), and Hudson Pepper (https://github.com/hudsonpepper).
 
+We would like to credit the creators of the technologies used above. Without your help, this project would've never gotten off the ground.
 We also give credit to Andrew Layendecker and Diego Struk Jaia for their help troubleshooting.
-
 A thanks also to everyone who helped bug-test the site. 
