@@ -6,7 +6,7 @@ This is meant to act as an interactive personal planner to help you manage goals
 The deployed site may be accessed here:
 https://hudsonpepper.github.io/Make-Your-Day/
 
-![Screenshot of Deployed Site](./assets/images/Example-Screenshot(Make-Your-Day).png "Screenshot")
+![Screenshot of Deployed Site](./assets/images/Example-Screenshot(Make-Your-Day)v2.png "Screenshot")
 <!-- ToDo Add Photo and Link to Deployment -->
 ## User Story
 	```
