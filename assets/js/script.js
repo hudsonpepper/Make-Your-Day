@@ -254,7 +254,7 @@ for (let i = 0; i < accElArray.length; i++) {
       }
       for (let i = 0; i < 4; i++) {
 
-        if (this.classList.contains("active")) {
+        if (panel.style.display === "none") {
           $(this).children().eq(spanArr[i]).text(numLiArr[i]);
           if (numLiArr[i] > 0) {
             $(this).children().eq(spanArr[i]).removeClass("hidden");
