@@ -75,6 +75,13 @@ li {
   color: white;
   font-size: 1em;
   line-height: 1.5;
+  overflow:auto;
+  position:relative;
+}
+li span {
+  max-width:80%;
+  position:absolute;
+  overflow:hidden;
 }
 
 
@@ -96,6 +103,7 @@ li button {
   cursor: pointer;
   color: black;
   font-size: 1em;
+  z-index: 3;
 }
 
 .customCardOne {
