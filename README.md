@@ -49,6 +49,7 @@ https://hudsonpepper.github.io/Make-Your-Day/
 11. Forismatic API https://www.forismatic.com/en/api
 12. GitHub
 13. GitHub Pages
+14. Google Fonts
 
 ## Credit
 This project is a collaboration between Brendan Daly (https://github.com/bdaly101), Christopher Young (https://github.com/cmfyoung), and Hudson Pepper (https://github.com/hudsonpepper).
