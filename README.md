@@ -1,14 +1,17 @@
 # Expanded-Workday
+<!-- Todo Edit This:  -->
+
 This is meant to act as an interactive personal planner which helps you manage goals, tasks, and events across multiple time-scales (Daily, weekly, monthly) and provides useful information for my day (such as weather, driving time (pot.), and Statistics)
 
+<!-- ToDo Add Photo and Link to Deployment -->
 ## User Story
-
+<!-- Todo Edit This: -->
 	AS A Busy Person With a Rich Personal and Professional Life
 	I WANT to be able to track my calendar, todo list, goals, and critical daily information
 	SO THAT I can be more productive and manage my time better
 
 ## Acceptance Criteria
-
+<!-- ToDo Edit This -->
  GIVEN I want to be able to track daily information
  THEN I need to create a daily planner 
  WHEN I open the planner 
