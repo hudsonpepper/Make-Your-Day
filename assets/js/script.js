@@ -123,6 +123,7 @@ day.each(function () {
   var dateIndex = Number($(this).attr("index"));
   var indexDiff = currDayIndex - dateIndex;
   var dayVal = currDay - indexDiff;
+  var monthVal = currMonth;
   // console.log(currMonth);
   if (dateIndex < currDayIndex) {
     //To do handle for when day is in previous month
@@ -130,6 +131,7 @@ day.each(function () {
     dayVal = currDay - indexDiff;
     // Handles if the week has days in 2 months
     if (dayVal < 1) {
+      monthVal--;
       if (currMonth === "01" || currMonth === "02" || currMonth === "04" || currMonth === "06" || currMonth === "08" || currMonth === "09" || currMonth === "11") {
         var monthIndex = [31, 30, 29, 28, 27, 26];
         dayVal = monthIndex[Math.abs(dayVal)];
@@ -150,8 +152,8 @@ day.each(function () {
         }
       }
     }
-
-    $(this).text(dayVal);
+    let dateText = `(${monthVal}/${dayVal})`
+    $(this).text(dateText);
 
   }
   else if (dateIndex > currDayIndex) {
@@ -161,13 +163,16 @@ day.each(function () {
     dayVal = Number(currDay) + indexDiff;
     //console.log(dayVal);
     if (dayVal > monthLen) {
+      monthVal++;
       dayVal = (dayVal - monthLen);
       // console.log(dayVal);
     }
-    $(this).text(dayVal);
+    let dateText = `(${monthVal}/${dayVal})`
+    $(this).text(dateText);
   }
   else {
-    $(this).text(currDay);
+    let dateText = `(${currMonth}/${dayVal})`
+    $(this).text(dateText);
   }
 })
 //console.log(currWkDay);
