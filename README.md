@@ -7,31 +7,35 @@ This is meant to act as an interactive personal planner which helps you manage g
 The deployed site may be accessed here:
 https://hudsonpepper.github.io/Make-Your-Day/
 
-![Screenshot of Deployed Site](./assets/images/Screenshot_Weather-Tracker.png "Screenshot")
+![Screenshot of Deployed Site](./assets/images/Example-Screenshot(Make-Your-Day).png "Screenshot")
 <!-- ToDo Add Photo and Link to Deployment -->
 ## User Story
+	```
 	AS A Busy Person With a Rich Personal and Professional Life
 	I WANT to be able to track my calendar, todo list, goals, and critical daily information
 	SO THAT I can be more productive and manage my time better
-
+	```
 ## Acceptance Criteria
- GIVEN I want to be able to track daily tasks
- THEN I need to create a daily planner 
- WHEN I open the planner 
- THEN I am presented with an interactable tasklist, weather, the current time, and a quote
- WHEN I enter a to-do into the "Add a To-do" box then a new to-do is created with the appropriate label
- WHEN I drag the to-do around, it can be repositioned on the page and update formatting dynamically
- WHEN I click the "✏️" icon
- THEN I am presented with a form to change the label
- WHEN I fill out the form to change the label and submit
- THEN the to-do label should change to the updated name
- WHEN I click on the "🗹" icon
- THEN the to-do is marked as complete and vanishes from the page
- WHEN I close the page
- THEN the page stores the to-do list in local storage
- WHEN I reopen the planner
- THEN I am presented with a new quote, updated weather, and an un-altered to-do list from before
-
+	```
+	GIVEN I want to be able to track daily tasks
+	THEN I need to create a daily planner 
+	WHEN I open the planner 
+	THEN I am presented with an interactable tasklist, weather, the current time, and a quote
+	WHEN I enter a to-do into the "Add a To-do" box 
+	THEN a new to-do is created with the appropriate label
+	WHEN I drag the to-do around 
+	THEN it can be repositioned on the page and update formatting dynamically
+	WHEN I click the "✏️" icon
+	THEN I am presented with a form to change the label
+	WHEN I fill out the form to change the label and submit
+	THEN the to-do label should change to the updated name
+	WHEN I click on the "🗹" icon
+	THEN the to-do is marked as complete and vanishes from the page
+	WHEN I close the page
+	THEN the page stores the to-do list in local storage
+	WHEN I reopen the planner
+	THEN I am presented with a new quote, updated weather, and an un-altered to-do list from before
+```
 ## Technologies Used:
 1. HTML
 2. CSS
