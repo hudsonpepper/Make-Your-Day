@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 
+
+
 /* Default */
 *,
 *::before,
@@ -12,7 +14,7 @@
   font-size: 20px;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Arimo', sans-serif;
   background-color: #eff5f8;
   color: #001b44;
 }
@@ -51,6 +53,12 @@ body {
   font-size: 1.5rem;
   margin-top: 100px;
 }
+
+.pageTitle {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  padding-bottom: 0.5rem
+}
 /* Date and Time */
 .lead {
   font-size: 1rem;
@@ -63,6 +71,9 @@ body {
 /* Quote Box */
 .quote-box {
   font-size: 0.75rem;
+}
+#quote {
+  font-style: italic;
 }
 
 /* Form Inputs */

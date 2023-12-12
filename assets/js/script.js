@@ -6,7 +6,6 @@ const currentHumidity = document.querySelector("#current-humidity");
 const currentCondition = document.querySelector("#current-condition");
 const weatherIcon = document.querySelector("#icon");
 var day = $(".day");
-console.log(day)
 var accElArray = $(".accordion");
 // ** End: Query Selectors **
 
@@ -18,7 +17,7 @@ var currDay = dayjs().format("D");
 var currMonth = dayjs().format("MM");
 var curYear = dayjs().format("YYYY");
 var currentDate = dayjs().format('dddd, MMMM D, YYYY');
-var currentTime = dayjs().format('hh:mm:ss a');
+var currentTime = dayjs().format('h:mm:ss a');
 //   --> HTML Date and Time Initialization
 $("#currentDay").html(currentDate);
 $("#currentTime").html(currentTime);
@@ -191,8 +190,6 @@ day.each(function () {
 
 // ----- Function Styles Current Day of the Week -----
 day.each(function () {
-  console.log(currWkDay)
-  console.log("Loop", $(this).attr("id"))
   if ($(this).attr("id") === currWkDay) {
     $(this).parent().addClass("curDay")
   }

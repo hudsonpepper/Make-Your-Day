@@ -2,7 +2,6 @@
 
 This is meant to act as an interactive personal planner to help you manage goals, tasks, and events throughout your week while also providing motivational quotes and accurate weather conditions for your current location (no input required)!
 
-This is meant to act as an interactive personal planner which helps you manage goals, tasks, and events across multiple time-scales (Daily, weekly, monthly) and provides useful information for my day (such as weather, driving time (pot.), and Statistics)
 
 The deployed site may be accessed here:
 https://hudsonpepper.github.io/Make-Your-Day/
@@ -35,7 +34,7 @@ https://hudsonpepper.github.io/Make-Your-Day/
 	THEN the page stores the to-do list in local storage
 	WHEN I reopen the planner
 	THEN I am presented with a new quote, updated weather, and an un-altered to-do list from before
-```
+	```
 ## Technologies Used:
 1. HTML
 2. CSS
@@ -46,8 +45,8 @@ https://hudsonpepper.github.io/Make-Your-Day/
 7. Bootstrap UI
 8. jQuery
 9. jQuery UI
-10. OpenWeather API https://weatherapi-com
-11. Forismatic API https://api.forismatic.com
+10. OpenWeather API https://www.weatherapi.com/
+11. Forismatic API https://www.forismatic.com/en/api
 12. GitHub
 13. GitHub Pages
 
