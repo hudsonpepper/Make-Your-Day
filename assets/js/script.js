@@ -218,7 +218,7 @@ for (let i = 0; i < accElArray.length; i++) {
     let numLi;
     console.log("Number of Elements:", numLi)
     var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
+    if (!this.classList.contains("active")) {
       panel.style.display = "none";
     }
     else {
@@ -254,7 +254,7 @@ for (let i = 0; i < accElArray.length; i++) {
       }
       for (let i = 0; i < 4; i++) {
 
-        if (panel.style.display === "none") {
+        if (this.classList.contains("active")) {
           $(this).children().eq(spanArr[i]).text(numLiArr[i]);
           if (numLiArr[i] > 0) {
             $(this).children().eq(spanArr[i]).removeClass("hidden");
