@@ -38,7 +38,15 @@
   </div>
 </div>
 <!-- Start Do To Tracker (Left Side) -->
-<div class="customCardOne space-x-2">
+<div class="customCard">
+  <button class="accordion">Instructions</button>
+  <ol class="panel">
+    <li>1. Enter the task in the "Add a To-do:" box then press "Enter".</li>
+    <li>2. (optional) Open appropriate windows, then drag and drop to set priority: "Must Do", "Should Do", or "Could Do".</li>
+    <li>3. (optional) Open appropriate windows, then drag and drop to set the day to complete the task.</li>
+  </ol>
+</div>
+<div class="customCardOne">
   <div class="customCard">
     <h1>To-do Tracker</h1>
     <form id="todo-form">
@@ -133,7 +141,7 @@
         <form id="project-form">
           <div class="modal-header custom-modal-header">
             <h5 class="modal-title" id="new-project-modal-label">
-              Edit your todo
+              Rename To-do
             </h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
@@ -153,7 +161,7 @@
               Cancel
             </button>
             <button type="submit" class="btn btn-custom" data-bs-dismiss="modal">
-              Add Project
+              Accept Change
             </button>
           </div>
         </form>

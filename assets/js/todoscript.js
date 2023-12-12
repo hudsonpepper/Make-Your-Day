@@ -68,7 +68,7 @@ function renderTodos() {
       connectWith: ".connectedSortable"
     }).disableSelection();
   });
-  todoCount = document.querySelectorAll("li").length;
+  todoCount = document.querySelectorAll("li").length - 3;
 
   todoCountSpan.textContent = todoCount;
 }

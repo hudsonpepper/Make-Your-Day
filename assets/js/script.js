@@ -211,10 +211,10 @@ for (let i = 0; i < accElArray.length; i++) {
     /* Toggle between adding and removing the "active" class,
     to highlight the button that controls the panel */
     this.classList.toggle("active");
-    if (i == 3 || i == 10) {
+    if (i == 4 || i == 11) {
       this.classList.toggle("rounded-b-lg")
     }
-    console.log("click");
+    console.log("click", this);
     let numLi;
     console.log("Number of Elements:", numLi)
     var panel = this.nextElementSibling;

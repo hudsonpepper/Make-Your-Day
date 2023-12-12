@@ -37,9 +37,9 @@ body {
   background-color: #1e3a8a;
   color: white;
   min-width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   top: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   z-index: 10;
 }
 
@@ -116,7 +116,7 @@ li button {
   /* border-radius: 8px;
   box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
     rgba(60, 64, 67, 0.15) 0 2px 4px 3px; */
-  margin: 60px auto;
+  margin: 5px;
   padding: 20px;
   width: 100%;
 }
@@ -132,6 +132,15 @@ ul li:hover {
   cursor: grab;
 }
 
+ol {
+  list-style-type: decimal;
+  background-color: #d6d3d1;
+}
+ol li {
+  font-size: medium !important;
+  background-color: #d6d3d1;
+  color: #1e3a8a;
+}
 
 
 
