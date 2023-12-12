@@ -101,7 +101,7 @@ function storeTodos() {
   // console.log((todoDiv.innerHTML));
   localStorage.setItem("todos", todoDiv.innerHTML);
   localStorage.setItem("calendar", document.querySelector("#calendarBox").innerHTML);
-  todoCount = document.querySelectorAll("li").length;
+  todoCount = document.querySelectorAll("li").length - 3;
   todoCountSpan.textContent = todoCount;
   // console.log("Todo Count", todoCount)
 }
