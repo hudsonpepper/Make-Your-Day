@@ -35,20 +35,26 @@ function renderTodos() {
       }
     }
     else {
-      // console.log("event.target", event.target)
       // console.log("Clicked On: ", event.target.innerText.split("\n")[0])
       // console.log("Data(raw): ", event.target.dataset);
       // console.log("Date: ", $(event.target).attr("date"))
       // console.log("Type: ", $(event.target).attr("type"));
       // console.log("Parent: ", $(event.target).parent().attr("id"));
       setTimeout(() => {
-        let pDate = $(event.target).parent().data("date");
+        let newTarget;
+        if(event.target.matches("span") === true) {
+          newTarget = event.target.parentNode;
+        }
+        else {
+          newTarget = event.target;
+        }
+        let pDate = $(newTarget).parent().data("date");
         //console.log("Parent Date: ", pDate);
-        let pType = $(event.target).parent().data("type");
+        let pType = $(newTarget).parent().data("type");
         //console.log("Parent Type: ", pType);
-        $(event.target).attr("date", pDate);
+        $(newTarget).attr("date", pDate);
         if (pType != null) {
-          $(event.target).attr("type", pType);
+          $(newTarget).attr("type", pType);
         }
         //console.log("After Move:", $(event.target).attr("date"), $(event.target).attr("type"))
         storeTodos();
@@ -147,7 +153,7 @@ todoForm.addEventListener("submit", function (event) {
   let numLi = $(unsortedList).children().length;
   $(unsortedList).prev().children().eq(0).text(numLi);
   console.log("NumLi", numLi);
-  if (numLi > 0) {
+  if (numLi > 0 && !($("#unsorted-btn").hasClass("active"))) {
     $("Inside the conditional")
 
     $(unsortedList).prev().children().eq(0).removeClass("hidden");

@@ -187,8 +187,27 @@ day.each(function () {
 // Accordion 
 var accElArray = $(".accordion");
 
+// $('#acchead').on('click', function() {
+//   if ($(this).hasClass('clickActive')) {
+//     $('.accordion-body').hide();
+//     $(this).removeClass('clickActive');
+//   } else {
+//     $('.accordion-body').show();
+//     $(this).addClass('clickActive');
+//   }
+// }).on('mouseenter', function () {
+//   if (!$(this).hasClass('clickActive')) {
+//     $('.accordion-body').show();
+//   }
+// }).on('mouseleave', function () {
+//   if (!$(this).hasClass('clickActive')) {
+//     $('.accordion-body').hide();
+//   }
+// });
+// });
+
 for (let i = 0; i < accElArray.length; i++) {
-  accElArray[i].addEventListener("click", function () {
+  $(accElArray[i]).on("click", function () {
     /* Toggle between adding and removing the "active" class,
     to highlight the button that controls the panel */
     this.classList.toggle("active");
@@ -252,6 +271,67 @@ for (let i = 0; i < accElArray.length; i++) {
     storeTodos();
     /* Toggle between hiding and showing the active panel */
 
+    // }).on('mouseenter', function () {
+    //   if (!$(accElArray[i]).hasClass('active')) {
+    //     $('.panel')[i].show();
+    //     if (i == 3 || i == 10) {
+    //       this.classList.toggle("rounded-b-lg")
+    //     }
+    //   }
+    // }).on('mouseleave', function () {
+    //   if (!$(this).hasClass('clickActive')) {
+    //     $('.panel')[i].hide();
+    //     if (i == 3 || i == 10) {
+    //       this.classList.toggle("rounded-b-lg")
+    //     }
+    //     console.log("Number of Elements:", numLi)
+    //     var panel = this.nextElementSibling;
+    //     if ($(this).parent().attr("id") == "todo-div") {
+    //       numLi = $(this).next().children().length;
+    //       if (panel.style.display === "none") {
+    //         $(this).children().eq(0).text(numLi);
+    //         if (numLi > 0) {
+    //           $(this).children().eq(0).removeClass("hidden");
+    //         }
+    //       } else {
+    //         // console.log( $(this).children().eq(1))
+    //         $(this).children().eq(0).text(numLi);
+    //         $(this).children().eq(0).addClass("hidden");
+    //       }
+    //     }
+    //     else {
+    //       console.log("In else statement");
+    //       let typeArr = ["Unsorted", "Must-do", "Should-do", "Could-do"];
+    //       let spanArr = [1, 2, 3, 4];
+    //       let numLiArr = [0, 0, 0, 0];
+    //       var panel = this.nextElementSibling;
+    //       console.log("Panel Length", $(panel).children().length)
+    //       for (let i = 0; i < $(panel).children().length; i++) {
+    //         console.log("i", i)
+    //         console.log($(panel).children().eq(i).attr("type"));
+    //         let j = typeArr.findIndex((element) => element == $(panel).children().eq(i).attr("type"));
+    //         console.log(j);
+    //         numLiArr[j]++;
+    //         console.log(numLiArr);
+    //       }
+    //       for (let i = 0; i < 4; i++) {
+
+    //         if (panel.style.display === "none") {
+    //           $(this).children().eq(spanArr[i]).text(numLiArr[i]);
+    //           if (numLiArr[i] > 0) {
+    //             $(this).children().eq(spanArr[i]).removeClass("hidden");
+
+    //           }
+    //         } else {
+    //           // console.log( $(this).children().eq(1))
+    //           $(this).children().eq(spanArr[i]).text(numLiArr[i]);
+    //           $(this).children().eq(spanArr[i]).addClass("hidden");
+
+    //         }
+    //       }
+    //     }
+    //     storeTodos();
+    //   }
   });
 };
 
