@@ -78,8 +78,8 @@ function renderTodos() {
       connectWith: ".connectedSortable"
     }).disableSelection();
   });
-  // Sets todoCount: Note the 3 is to make sure it isn't overcounting from the instruction lis
-  todoCount = document.querySelectorAll("li").length - 4;
+  // Sets todoCount: Note the 5 is to make sure it isn't overcounting from the instruction lis
+  todoCount = document.querySelectorAll("li").length - 5;
   todoCountSpan.textContent = todoCount;
 }
 
@@ -110,7 +110,7 @@ function storeTodos() {
   localStorage.setItem("todos", todoDiv.innerHTML);
   localStorage.setItem("calendar", document.querySelector("#calendarBox").innerHTML);
   // Reset todoCount
-  todoCount = document.querySelectorAll("li").length - 4;
+  todoCount = document.querySelectorAll("li").length - 5;
   todoCountSpan.textContent = todoCount;
 }
 
@@ -135,7 +135,7 @@ todoForm.addEventListener("submit", function (event) {
 
   // Makes Delete Button
   var button2 = document.createElement("button");
-  button2.textContent = "🗹"; // ✔ ✔️ ☑️ ✅ 
+  button2.textContent = "✔"; // ✔ ✔️ ☑️ ✅ 
   button2.classList.add("rounded-full", "delete-btn");
 
   // Makes Edit Button
