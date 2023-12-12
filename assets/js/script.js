@@ -131,7 +131,7 @@ day.each(function () {
     dayVal = currDay - indexDiff;
     // Handles if the week has days in 2 months
     if (dayVal < 1) {
-      monthVal--;
+      monthVal = ((monthVal+10) % 12) + 1;
       if (currMonth === "01" || currMonth === "02" || currMonth === "04" || currMonth === "06" || currMonth === "08" || currMonth === "09" || currMonth === "11") {
         var monthIndex = [31, 30, 29, 28, 27, 26];
         dayVal = monthIndex[Math.abs(dayVal)];
@@ -163,7 +163,7 @@ day.each(function () {
     dayVal = Number(currDay) + indexDiff;
     //console.log(dayVal);
     if (dayVal > monthLen) {
-      monthVal++;
+      monthVal= (monthVal % 12) + 1;
       dayVal = (dayVal - monthLen);
       // console.log(dayVal);
     }
