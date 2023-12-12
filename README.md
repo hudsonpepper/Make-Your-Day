@@ -28,7 +28,7 @@ https://hudsonpepper.github.io/Make-Your-Day/
 	THEN I am presented with a form to change the label
 	WHEN I fill out the form to change the label and submit
 	THEN the to-do label should change to the updated name
-	WHEN I click on the "🗹" icon
+	WHEN I click on the "✔" icon
 	THEN the to-do is marked as complete and vanishes from the page
 	WHEN I close the page
 	THEN the page stores the to-do list in local storage
